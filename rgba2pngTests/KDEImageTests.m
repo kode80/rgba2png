@@ -31,10 +31,10 @@
 
 - (void) testBitShiftForChannel
 {
-    XCTAssertEqual( [KDEImage bitShiftForChannel:KDEImageChannelRed],    0, @"Red channel bit shift is incorrect.");
-    XCTAssertEqual( [KDEImage bitShiftForChannel:KDEImageChannelGreen],  8, @"Green channel bit shift is incorrect.");
-    XCTAssertEqual( [KDEImage bitShiftForChannel:KDEImageChannelBlue],  16, @"Blue channel bit shift is incorrect.");
-    XCTAssertEqual( [KDEImage bitShiftForChannel:KDEImageChannelAlpha], 24, @"Alpha channel bit shift is incorrect.");
+    XCTAssertEqual( [KDEImage bitShiftForChannel:KDEImageChannelRed],   24, @"Red channel bit shift is incorrect.");
+    XCTAssertEqual( [KDEImage bitShiftForChannel:KDEImageChannelGreen], 16, @"Green channel bit shift is incorrect.");
+    XCTAssertEqual( [KDEImage bitShiftForChannel:KDEImageChannelBlue],   8, @"Blue channel bit shift is incorrect.");
+    XCTAssertEqual( [KDEImage bitShiftForChannel:KDEImageChannelAlpha],  0, @"Alpha channel bit shift is incorrect.");
 }
 
 - (void) testBitMaskForChannel
@@ -81,6 +81,32 @@
                                                     height:correctImage1.pixelHeight
                                                      color:KDEImagePixelMake( 236, 246, 106, 255)];
     XCTAssertTrue( [testImage3 isEqualToImage:correctImage3], @"New color-filled image should be equal to from-disk image.");
+}
+
+- (void) testCopyChannels
+{
+    KDEImage *original = [[KDEImage alloc] initWithContentsOfFile:[self pathForImageNamed:@"TestImage_Same1"]];
+    KDEImage *reconstructed = [[KDEImage alloc] initWithWidth:original.pixelWidth
+                                                       height:original.pixelHeight
+                                                        color:KDEImagePixelMake( 0, 0, 0, 0)];
+    
+    [reconstructed copyChannel:KDEImageChannelRed
+                     fromImage:original
+                     toChannel:KDEImageChannelRed];
+    
+    [reconstructed copyChannel:KDEImageChannelGreen
+                     fromImage:original
+                     toChannel:KDEImageChannelGreen];
+    
+    [reconstructed copyChannel:KDEImageChannelBlue
+                     fromImage:original
+                     toChannel:KDEImageChannelBlue];
+    
+    [reconstructed copyChannel:KDEImageChannelAlpha
+                     fromImage:original
+                     toChannel:KDEImageChannelAlpha];
+    
+    XCTAssertTrue( [reconstructed isEqualToImage:original], @"Image reconstructed by copying each channel should equal original.");
 }
 
 - (NSString *) pathForImageNamed:(NSString *)imageName

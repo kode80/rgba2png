@@ -181,18 +181,19 @@ NSString *NSStringFromKDEImagePixel( KDEImagePixel pixel)
 {
     if( [self dimensionsAreEqualWith:source] == NO) { return; }
     
-    uint32_t *sourcePixel = (uint32_t *)source.imageRep.bitmapData;
-    uint32_t *destinationPixel = (uint32_t *)self.imageRep.bitmapData;
+    KDEImagePixel *sourcePixel = (KDEImagePixel *)source.imageRep.bitmapData;
+    KDEImagePixel *destinationPixel = (KDEImagePixel *)self.imageRep.bitmapData;
     
-    int count = (int)self.imageRep.pixelsWide * (int)self.imageRep.pixelsHigh;
+    int count = self.pixelWidth * self.pixelHeight;
     int sourceBitShift = [KDEImage bitShiftForChannel:sourceChannel];
+    int destinationBitShift = [KDEImage bitShiftForChannel:destinationChannel];
     uint32_t destinationBitMask = ~[KDEImage bitMaskForChannel:destinationChannel];
     uint32_t sourceValue;
     
     for( int i=0; i<count; i++)
     {
-        sourceValue = ((*sourcePixel) >> sourceBitShift) & 0x000000ff;
-        *destinationPixel = ((*destinationPixel) & destinationBitMask) | (sourceValue << sourceBitShift);
+        sourceValue = (sourcePixel->bits >> sourceBitShift) & 0x000000ff;
+        destinationPixel->bits = (destinationPixel->bits & destinationBitMask) | (sourceValue << destinationBitShift);
         
         sourcePixel++;
         destinationPixel++;
@@ -205,10 +206,10 @@ NSString *NSStringFromKDEImagePixel( KDEImagePixel pixel)
 {
     switch( channel)
     {
-        case KDEImageChannelRed:   return 0;
-        case KDEImageChannelGreen: return 8;
-        case KDEImageChannelBlue:  return 16;
-        case KDEImageChannelAlpha: return 24;
+        case KDEImageChannelRed:   return 24;
+        case KDEImageChannelGreen: return 16;
+        case KDEImageChannelBlue:  return 8;
+        case KDEImageChannelAlpha: return 0;
     }
 }
 
