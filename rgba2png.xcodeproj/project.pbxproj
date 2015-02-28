@@ -1,0 +1,469 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2032F3181AA2021B00700661 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2032F3171AA2021B00700661 /* main.m */; };
+		2032F31E1AA2021B00700661 /* Document.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2032F31C1AA2021B00700661 /* Document.xib */; };
+		2032F3201AA2021B00700661 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2032F31F1AA2021B00700661 /* Images.xcassets */; };
+		2032F3231AA2021B00700661 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2032F3211AA2021B00700661 /* MainMenu.xib */; };
+		2032F32F1AA2021B00700661 /* rgba2pngTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2032F32E1AA2021B00700661 /* rgba2pngTests.m */; };
+		2054E0FE1AA2316C00ADCD0D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2054E0F91AA2316C00ADCD0D /* AppDelegate.m */; };
+		2054E0FF1AA2316C00ADCD0D /* Document.m in Sources */ = {isa = PBXBuildFile; fileRef = 2054E0FB1AA2316C00ADCD0D /* Document.m */; };
+		2054E1001AA2316C00ADCD0D /* KDEImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 2054E0FD1AA2316C00ADCD0D /* KDEImage.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2032F3291AA2021B00700661 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2032F3071AA2021B00700661 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2032F30E1AA2021B00700661;
+			remoteInfo = rgba2png;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2032F30F1AA2021B00700661 /* rgba2png.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rgba2png.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2032F3131AA2021B00700661 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2032F3171AA2021B00700661 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2032F31D1AA2021B00700661 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/Document.xib; sourceTree = "<group>"; };
+		2032F31F1AA2021B00700661 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		2032F3221AA2021B00700661 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		2032F3281AA2021B00700661 /* rgba2pngTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = rgba2pngTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2032F32D1AA2021B00700661 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2032F32E1AA2021B00700661 /* rgba2pngTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = rgba2pngTests.m; sourceTree = "<group>"; };
+		2054E0F81AA2316C00ADCD0D /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		2054E0F91AA2316C00ADCD0D /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		2054E0FA1AA2316C00ADCD0D /* Document.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Document.h; sourceTree = "<group>"; };
+		2054E0FB1AA2316C00ADCD0D /* Document.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Document.m; sourceTree = "<group>"; };
+		2054E0FC1AA2316C00ADCD0D /* KDEImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KDEImage.h; sourceTree = "<group>"; };
+		2054E0FD1AA2316C00ADCD0D /* KDEImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KDEImage.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2032F30C1AA2021B00700661 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2032F3251AA2021B00700661 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2032F3061AA2021B00700661 = {
+			isa = PBXGroup;
+			children = (
+				2032F3111AA2021B00700661 /* rgba2png */,
+				2032F32B1AA2021B00700661 /* rgba2pngTests */,
+				2032F3101AA2021B00700661 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2032F3101AA2021B00700661 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2032F30F1AA2021B00700661 /* rgba2png.app */,
+				2032F3281AA2021B00700661 /* rgba2pngTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2032F3111AA2021B00700661 /* rgba2png */ = {
+			isa = PBXGroup;
+			children = (
+				2054E0F71AA2316C00ADCD0D /* Source */,
+				2032F31C1AA2021B00700661 /* Document.xib */,
+				2032F31F1AA2021B00700661 /* Images.xcassets */,
+				2032F3211AA2021B00700661 /* MainMenu.xib */,
+				2032F3121AA2021B00700661 /* Supporting Files */,
+			);
+			path = rgba2png;
+			sourceTree = "<group>";
+		};
+		2032F3121AA2021B00700661 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2032F3131AA2021B00700661 /* Info.plist */,
+				2032F3171AA2021B00700661 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2032F32B1AA2021B00700661 /* rgba2pngTests */ = {
+			isa = PBXGroup;
+			children = (
+				2032F32E1AA2021B00700661 /* rgba2pngTests.m */,
+				2032F32C1AA2021B00700661 /* Supporting Files */,
+			);
+			path = rgba2pngTests;
+			sourceTree = "<group>";
+		};
+		2032F32C1AA2021B00700661 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2032F32D1AA2021B00700661 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2054E0F71AA2316C00ADCD0D /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				2054E0F81AA2316C00ADCD0D /* AppDelegate.h */,
+				2054E0F91AA2316C00ADCD0D /* AppDelegate.m */,
+				2054E0FA1AA2316C00ADCD0D /* Document.h */,
+				2054E0FB1AA2316C00ADCD0D /* Document.m */,
+				2054E0FC1AA2316C00ADCD0D /* KDEImage.h */,
+				2054E0FD1AA2316C00ADCD0D /* KDEImage.m */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2032F30E1AA2021B00700661 /* rgba2png */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2032F3321AA2021B00700661 /* Build configuration list for PBXNativeTarget "rgba2png" */;
+			buildPhases = (
+				2032F30B1AA2021B00700661 /* Sources */,
+				2032F30C1AA2021B00700661 /* Frameworks */,
+				2032F30D1AA2021B00700661 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = rgba2png;
+			productName = rgba2png;
+			productReference = 2032F30F1AA2021B00700661 /* rgba2png.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2032F3271AA2021B00700661 /* rgba2pngTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2032F3351AA2021B00700661 /* Build configuration list for PBXNativeTarget "rgba2pngTests" */;
+			buildPhases = (
+				2032F3241AA2021B00700661 /* Sources */,
+				2032F3251AA2021B00700661 /* Frameworks */,
+				2032F3261AA2021B00700661 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2032F32A1AA2021B00700661 /* PBXTargetDependency */,
+			);
+			name = rgba2pngTests;
+			productName = rgba2pngTests;
+			productReference = 2032F3281AA2021B00700661 /* rgba2pngTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2032F3071AA2021B00700661 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = kode80;
+				TargetAttributes = {
+					2032F30E1AA2021B00700661 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					2032F3271AA2021B00700661 = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = 2032F30E1AA2021B00700661;
+					};
+				};
+			};
+			buildConfigurationList = 2032F30A1AA2021B00700661 /* Build configuration list for PBXProject "rgba2png" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2032F3061AA2021B00700661;
+			productRefGroup = 2032F3101AA2021B00700661 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2032F30E1AA2021B00700661 /* rgba2png */,
+				2032F3271AA2021B00700661 /* rgba2pngTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2032F30D1AA2021B00700661 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2032F31E1AA2021B00700661 /* Document.xib in Resources */,
+				2032F3201AA2021B00700661 /* Images.xcassets in Resources */,
+				2032F3231AA2021B00700661 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2032F3261AA2021B00700661 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2032F30B1AA2021B00700661 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2054E1001AA2316C00ADCD0D /* KDEImage.m in Sources */,
+				2054E0FF1AA2316C00ADCD0D /* Document.m in Sources */,
+				2054E0FE1AA2316C00ADCD0D /* AppDelegate.m in Sources */,
+				2032F3181AA2021B00700661 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2032F3241AA2021B00700661 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2032F32F1AA2021B00700661 /* rgba2pngTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2032F32A1AA2021B00700661 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2032F30E1AA2021B00700661 /* rgba2png */;
+			targetProxy = 2032F3291AA2021B00700661 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2032F31C1AA2021B00700661 /* Document.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2032F31D1AA2021B00700661 /* Base */,
+			);
+			name = Document.xib;
+			sourceTree = "<group>";
+		};
+		2032F3211AA2021B00700661 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2032F3221AA2021B00700661 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2032F3301AA2021B00700661 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Debug;
+		};
+		2032F3311AA2021B00700661 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Release;
+		};
+		2032F3331AA2021B00700661 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = rgba2png/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/rgba2png",
+					"$(PROJECT_DIR)/rgba2png/ImageMagick-6.9.0/lib",
+					"$(PROJECT_DIR)/rgba2png/ImageMagick-6.9.0",
+					/opt/X11/lib,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		2032F3341AA2021B00700661 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = rgba2png/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/rgba2png",
+					"$(PROJECT_DIR)/rgba2png/ImageMagick-6.9.0/lib",
+					"$(PROJECT_DIR)/rgba2png/ImageMagick-6.9.0",
+					/opt/X11/lib,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		2032F3361AA2021B00700661 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = rgba2pngTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/rgba2png.app/Contents/MacOS/rgba2png";
+			};
+			name = Debug;
+		};
+		2032F3371AA2021B00700661 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = rgba2pngTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/rgba2png.app/Contents/MacOS/rgba2png";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2032F30A1AA2021B00700661 /* Build configuration list for PBXProject "rgba2png" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2032F3301AA2021B00700661 /* Debug */,
+				2032F3311AA2021B00700661 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2032F3321AA2021B00700661 /* Build configuration list for PBXNativeTarget "rgba2png" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2032F3331AA2021B00700661 /* Debug */,
+				2032F3341AA2021B00700661 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2032F3351AA2021B00700661 /* Build configuration list for PBXNativeTarget "rgba2pngTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2032F3361AA2021B00700661 /* Debug */,
+				2032F3371AA2021B00700661 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2032F3071AA2021B00700661 /* Project object */;
+}
