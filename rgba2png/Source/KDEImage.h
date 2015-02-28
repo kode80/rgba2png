@@ -18,6 +18,9 @@ typedef struct KDEImagePixel
 
 @interface KDEImage : NSObject
 
+@property (nonatomic, readonly, assign) int pixelWidth;
+@property (nonatomic, readonly, assign) int pixelHeight;
+
 - (instancetype) initWithContentsOfFile:(NSString *)path;
 - (instancetype) initWithNSImage:(NSImage *)image;
 

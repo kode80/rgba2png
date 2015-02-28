@@ -18,6 +18,8 @@
 
 @implementation KDEImage
 
+@dynamic pixelWidth, pixelHeight;
+
 - (instancetype) initWithContentsOfFile:(NSString *)path
 {
     return [self initWithNSImage:[[NSImage alloc] initWithContentsOfFile:path]];
@@ -54,6 +56,16 @@
         [NSGraphicsContext restoreGraphicsState];
     }
     return self;
+}
+
+- (int) pixelWidth
+{
+    return (int)self.imageRep.pixelsWide;
+}
+
+- (int) pixelHeight
+{
+    return (int)self.imageRep.pixelsHigh;
 }
 
 - (void) savePNGToPath:(NSString *)path
