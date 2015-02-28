@@ -22,6 +22,7 @@
     NSString *desktopPath = paths[0];
     
     KDEImage *image = [[KDEImage alloc] initWithContentsOfFile:[desktopPath stringByAppendingPathComponent:@"imtest/input.png"]];
+    [image convertToLuminosity];
     [image savePNGToPath:[desktopPath stringByAppendingPathComponent:@"imtest/output.png"]];
 }
 

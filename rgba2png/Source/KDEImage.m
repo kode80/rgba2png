@@ -64,4 +64,23 @@
               atomically:YES];
 }
 
+- (void) convertToLuminosity
+{
+    KDEImagePixel *pixel = (KDEImagePixel *)self.imageRep.bitmapData;
+    int count = (int)self.imageRep.pixelsWide * (int)self.imageRep.pixelsHigh;
+    int luminosity;
+    
+    for( int i=0; i<count; i++)
+    {
+        luminosity = (pixel->red * 0.21f) + (pixel->green * 0.72f) + (pixel->blue * 0.07f);
+        luminosity = luminosity > 255 ? 255 : luminosity;
+        
+        pixel->red = luminosity;
+        pixel->green = luminosity;
+        pixel->blue = luminosity;
+        
+        pixel++;
+    }
+}
+
 @end

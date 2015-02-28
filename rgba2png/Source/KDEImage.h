@@ -20,6 +20,9 @@ typedef struct KDEImagePixel
 
 - (instancetype) initWithContentsOfFile:(NSString *)path;
 - (instancetype) initWithNSImage:(NSImage *)image;
+
 - (void) savePNGToPath:(NSString *)path;
+
+- (void) convertToLuminosity;
 
 @end
