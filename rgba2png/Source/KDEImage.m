@@ -8,6 +8,8 @@
 
 #import "KDEImage.h"
 #import <Cocoa/Cocoa.h>
+#import "KDEImage+Private.h"
+
 
 @interface KDEImage ()
 
@@ -19,6 +21,8 @@
 @implementation KDEImage
 
 @dynamic pixelWidth, pixelHeight;
+
+#pragma mark - Initializers
 
 - (instancetype) initWithContentsOfFile:(NSString *)path
 {
@@ -58,6 +62,8 @@
     return self;
 }
 
+#pragma mark - Accessors
+
 - (int) pixelWidth
 {
     return (int)self.imageRep.pixelsWide;
@@ -67,6 +73,8 @@
 {
     return (int)self.imageRep.pixelsHigh;
 }
+
+#pragma mark - Public
 
 - (void) savePNGToPath:(NSString *)path
 {
@@ -92,6 +100,82 @@
         pixel->blue = luminosity;
         
         pixel++;
+    }
+}
+
+- (BOOL) dimensionsAreEqualWith:(KDEImage *)image
+{
+    return self.pixelWidth == image.pixelWidth && self.pixelHeight == image.pixelHeight;
+}
+
+- (BOOL) isEqualToImage:(KDEImage *)image
+{
+    if( [self dimensionsAreEqualWith:image] == NO) { return NO; }
+    if( self == image) { return YES; }
+    
+    uint32_t *sourcePixel = (uint32_t *)image.imageRep.bitmapData;
+    uint32_t *destinationPixel = (uint32_t *)self.imageRep.bitmapData;
+    int count = (int)self.imageRep.pixelsWide * (int)self.imageRep.pixelsHigh;
+    
+    for( int i=0; i<count; i++)
+    {
+        if( *sourcePixel != *destinationPixel)
+        {
+            return NO;
+        }
+        
+        sourcePixel++;
+        destinationPixel++;
+    }
+    
+    return YES;
+}
+
+- (void) copyChannel:(KDEImageChannel)sourceChannel
+           fromImage:(KDEImage *)source
+           toChannel:(KDEImageChannel)destinationChannel
+{
+    if( [self dimensionsAreEqualWith:source] == NO) { return; }
+    
+    uint32_t *sourcePixel = (uint32_t *)source.imageRep.bitmapData;
+    uint32_t *destinationPixel = (uint32_t *)self.imageRep.bitmapData;
+    
+    int count = (int)self.imageRep.pixelsWide * (int)self.imageRep.pixelsHigh;
+    int sourceBitShift = [KDEImage bitShiftForChannel:sourceChannel];
+    uint32_t destinationBitMask = ~[KDEImage bitMaskForChannel:destinationChannel];
+    uint32_t sourceValue;
+    
+    for( int i=0; i<count; i++)
+    {
+        sourceValue = ((*sourcePixel) >> sourceBitShift) & 0x000000ff;
+        *destinationPixel = ((*destinationPixel) & destinationBitMask) | (sourceValue << sourceBitShift);
+        
+        sourcePixel++;
+        destinationPixel++;
+    }
+}
+
+#pragma mark - Private
+
++ (int) bitShiftForChannel:(KDEImageChannel)channel
+{
+    switch( channel)
+    {
+        case KDEImageChannelRed:   return 0;
+        case KDEImageChannelGreen: return 8;
+        case KDEImageChannelBlue:  return 16;
+        case KDEImageChannelAlpha: return 24;
+    }
+}
+
++ (uint32_t) bitMaskForChannel:(KDEImageChannel)channel
+{
+    switch( channel)
+    {
+        case KDEImageChannelRed:   return 0xff000000;
+        case KDEImageChannelGreen: return 0x00ff0000;
+        case KDEImageChannelBlue:  return 0x0000ff00;
+        case KDEImageChannelAlpha: return 0x000000ff;
     }
 }
 

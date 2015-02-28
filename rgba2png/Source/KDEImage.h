@@ -16,6 +16,14 @@ typedef struct KDEImagePixel
     uint8_t alpha;
 } KDEImagePixel;
 
+typedef NS_ENUM( NSUInteger, KDEImageChannel)
+{
+    KDEImageChannelRed   = 1 << 1,
+    KDEImageChannelGreen = 1 << 2,
+    KDEImageChannelBlue  = 1 << 3,
+    KDEImageChannelAlpha = 1 << 4
+};
+
 @interface KDEImage : NSObject
 
 @property (nonatomic, readonly, assign) int pixelWidth;
@@ -27,5 +35,12 @@ typedef struct KDEImagePixel
 - (void) savePNGToPath:(NSString *)path;
 
 - (void) convertToLuminosity;
+
+- (BOOL) dimensionsAreEqualWith:(KDEImage *)image;
+- (BOOL) isEqualToImage:(KDEImage *)image;
+
+- (void) copyChannel:(KDEImageChannel)sourceChannel
+           fromImage:(KDEImage *)source
+           toChannel:(KDEImageChannel)destinationChannel;
 
 @end
