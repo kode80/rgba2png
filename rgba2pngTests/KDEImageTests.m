@@ -62,6 +62,27 @@
     XCTAssertFalse( [same1 isEqualToImage:different], @"Non-identical images should return not-equal");
 }
 
+- (void) testInitWithWidthHeightColor
+{
+    KDEImage *correctImage1 = [[KDEImage alloc] initWithContentsOfFile:[self pathForImageNamed:@"TestImage_r58g215b255"]];
+    KDEImage *testImage1 = [[KDEImage alloc] initWithWidth:correctImage1.pixelWidth
+                                                    height:correctImage1.pixelHeight
+                                                     color:KDEImagePixelMake( 58, 215, 255, 255)];
+    XCTAssertTrue( [testImage1 isEqualToImage:correctImage1], @"New color-filled image should be equal to from-disk image.");
+    
+    KDEImage *correctImage2 = [[KDEImage alloc] initWithContentsOfFile:[self pathForImageNamed:@"TestImage_r196g44b0"]];
+    KDEImage *testImage2 = [[KDEImage alloc] initWithWidth:correctImage1.pixelWidth
+                                                    height:correctImage1.pixelHeight
+                                                     color:KDEImagePixelMake( 196, 44, 0, 255)];
+    XCTAssertTrue( [testImage2 isEqualToImage:correctImage2], @"New color-filled image should be equal to from-disk image.");
+    
+    KDEImage *correctImage3 = [[KDEImage alloc] initWithContentsOfFile:[self pathForImageNamed:@"TestImage_r236g246b106"]];
+    KDEImage *testImage3 = [[KDEImage alloc] initWithWidth:correctImage1.pixelWidth
+                                                    height:correctImage1.pixelHeight
+                                                     color:KDEImagePixelMake( 236, 246, 106, 255)];
+    XCTAssertTrue( [testImage3 isEqualToImage:correctImage3], @"New color-filled image should be equal to from-disk image.");
+}
+
 - (NSString *) pathForImageNamed:(NSString *)imageName
 {
     return [[NSBundle bundleForClass:[self class]] pathForResource:imageName ofType:@"png"];
