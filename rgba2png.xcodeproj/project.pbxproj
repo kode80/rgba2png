@@ -13,16 +13,15 @@
 		2032F3231AA2021B00700661 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2032F3211AA2021B00700661 /* MainMenu.xib */; };
 		2032F32F1AA2021B00700661 /* rgba2pngTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2032F32E1AA2021B00700661 /* rgba2pngTests.m */; };
 		2054E0FE1AA2316C00ADCD0D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2054E0F91AA2316C00ADCD0D /* AppDelegate.m */; };
-		2054E0FF1AA2316C00ADCD0D /* Document.m in Sources */ = {isa = PBXBuildFile; fileRef = 2054E0FB1AA2316C00ADCD0D /* Document.m */; };
-		2054E1001AA2316C00ADCD0D /* KDEImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 2054E0FD1AA2316C00ADCD0D /* KDEImage.m */; };
 		2054E1021AA2478200ADCD0D /* KDEImageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2054E1011AA2478200ADCD0D /* KDEImageTests.m */; };
-		2054E1041AA2489C00ADCD0D /* KDEImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 2054E0FD1AA2316C00ADCD0D /* KDEImage.m */; };
 		2054E1081AA24BDB00ADCD0D /* TestImage_Different.png in Resources */ = {isa = PBXBuildFile; fileRef = 2054E1051AA24BDB00ADCD0D /* TestImage_Different.png */; };
 		2054E1091AA24BDB00ADCD0D /* TestImage_Same1.png in Resources */ = {isa = PBXBuildFile; fileRef = 2054E1061AA24BDB00ADCD0D /* TestImage_Same1.png */; };
 		2054E10A1AA24BDB00ADCD0D /* TestImage_Same2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2054E1071AA24BDB00ADCD0D /* TestImage_Same2.png */; };
 		2054E10E1AA25CB800ADCD0D /* TestImage_r58g215b255.png in Resources */ = {isa = PBXBuildFile; fileRef = 2054E10B1AA25CB800ADCD0D /* TestImage_r58g215b255.png */; };
 		2054E10F1AA25CB800ADCD0D /* TestImage_r196g44b0.png in Resources */ = {isa = PBXBuildFile; fileRef = 2054E10C1AA25CB800ADCD0D /* TestImage_r196g44b0.png */; };
 		2054E1101AA25CB800ADCD0D /* TestImage_r236g246b106.png in Resources */ = {isa = PBXBuildFile; fileRef = 2054E10D1AA25CB800ADCD0D /* TestImage_r236g246b106.png */; };
+		2054E1171AA280FC00ADCD0D /* Document.m in Sources */ = {isa = PBXBuildFile; fileRef = 2054E1131AA280FC00ADCD0D /* Document.m */; };
+		2054E1181AA280FC00ADCD0D /* KDEImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 2054E1161AA280FC00ADCD0D /* KDEImage.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,18 +46,18 @@
 		2032F32E1AA2021B00700661 /* rgba2pngTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = rgba2pngTests.m; sourceTree = "<group>"; };
 		2054E0F81AA2316C00ADCD0D /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2054E0F91AA2316C00ADCD0D /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		2054E0FA1AA2316C00ADCD0D /* Document.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Document.h; sourceTree = "<group>"; };
-		2054E0FB1AA2316C00ADCD0D /* Document.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Document.m; sourceTree = "<group>"; };
-		2054E0FC1AA2316C00ADCD0D /* KDEImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KDEImage.h; sourceTree = "<group>"; };
-		2054E0FD1AA2316C00ADCD0D /* KDEImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KDEImage.m; sourceTree = "<group>"; };
 		2054E1011AA2478200ADCD0D /* KDEImageTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KDEImageTests.m; sourceTree = "<group>"; };
-		2054E1031AA247D700ADCD0D /* KDEImage+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KDEImage+Private.h"; sourceTree = "<group>"; };
 		2054E1051AA24BDB00ADCD0D /* TestImage_Different.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TestImage_Different.png; sourceTree = "<group>"; };
 		2054E1061AA24BDB00ADCD0D /* TestImage_Same1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TestImage_Same1.png; sourceTree = "<group>"; };
 		2054E1071AA24BDB00ADCD0D /* TestImage_Same2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TestImage_Same2.png; sourceTree = "<group>"; };
 		2054E10B1AA25CB800ADCD0D /* TestImage_r58g215b255.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TestImage_r58g215b255.png; sourceTree = "<group>"; };
 		2054E10C1AA25CB800ADCD0D /* TestImage_r196g44b0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TestImage_r196g44b0.png; sourceTree = "<group>"; };
 		2054E10D1AA25CB800ADCD0D /* TestImage_r236g246b106.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TestImage_r236g246b106.png; sourceTree = "<group>"; };
+		2054E1121AA280FC00ADCD0D /* Document.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Document.h; sourceTree = "<group>"; };
+		2054E1131AA280FC00ADCD0D /* Document.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Document.m; sourceTree = "<group>"; };
+		2054E1151AA280FC00ADCD0D /* KDEImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KDEImage.h; sourceTree = "<group>"; };
+		2054E1161AA280FC00ADCD0D /* KDEImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KDEImage.m; sourceTree = "<group>"; };
+		2054E1191AA2810B00ADCD0D /* KDEImage+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KDEImage+Private.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,15 +144,31 @@
 		2054E0F71AA2316C00ADCD0D /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				2054E1111AA280FC00ADCD0D /* Document */,
+				2054E1141AA280FC00ADCD0D /* Image */,
 				2054E0F81AA2316C00ADCD0D /* AppDelegate.h */,
 				2054E0F91AA2316C00ADCD0D /* AppDelegate.m */,
-				2054E0FA1AA2316C00ADCD0D /* Document.h */,
-				2054E0FB1AA2316C00ADCD0D /* Document.m */,
-				2054E0FC1AA2316C00ADCD0D /* KDEImage.h */,
-				2054E0FD1AA2316C00ADCD0D /* KDEImage.m */,
-				2054E1031AA247D700ADCD0D /* KDEImage+Private.h */,
 			);
 			path = Source;
+			sourceTree = "<group>";
+		};
+		2054E1111AA280FC00ADCD0D /* Document */ = {
+			isa = PBXGroup;
+			children = (
+				2054E1121AA280FC00ADCD0D /* Document.h */,
+				2054E1131AA280FC00ADCD0D /* Document.m */,
+			);
+			path = Document;
+			sourceTree = "<group>";
+		};
+		2054E1141AA280FC00ADCD0D /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				2054E1191AA2810B00ADCD0D /* KDEImage+Private.h */,
+				2054E1151AA280FC00ADCD0D /* KDEImage.h */,
+				2054E1161AA280FC00ADCD0D /* KDEImage.m */,
+			);
+			path = Image;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,8 +277,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2054E1001AA2316C00ADCD0D /* KDEImage.m in Sources */,
-				2054E0FF1AA2316C00ADCD0D /* Document.m in Sources */,
+				2054E1181AA280FC00ADCD0D /* KDEImage.m in Sources */,
+				2054E1171AA280FC00ADCD0D /* Document.m in Sources */,
 				2054E0FE1AA2316C00ADCD0D /* AppDelegate.m in Sources */,
 				2032F3181AA2021B00700661 /* main.m in Sources */,
 			);
@@ -273,7 +288,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2054E1041AA2489C00ADCD0D /* KDEImage.m in Sources */,
 				2054E1021AA2478200ADCD0D /* KDEImageTests.m in Sources */,
 				2032F32F1AA2021B00700661 /* rgba2pngTests.m in Sources */,
 			);
