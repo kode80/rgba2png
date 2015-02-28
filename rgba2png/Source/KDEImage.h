@@ -8,12 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
-typedef struct KDEImagePixel
+typedef union KDEImagePixel
 {
-    uint8_t red;
-    uint8_t green;
-    uint8_t blue;
-    uint8_t alpha;
+    struct
+    {
+        uint8_t red;
+        uint8_t green;
+        uint8_t blue;
+        uint8_t alpha;
+    };
+    uint32_t bits;
 } KDEImagePixel;
 
 typedef NS_ENUM( NSUInteger, KDEImageChannel)
@@ -24,16 +28,24 @@ typedef NS_ENUM( NSUInteger, KDEImageChannel)
     KDEImageChannelAlpha = 1 << 4
 };
 
+KDEImagePixel KDEImagePixelMake( uint8_t red, uint8_t green, uint8_t blue, uint8_t alpha);
+NSString *NSStringFromKDEImagePixel( KDEImagePixel pixel);
+
+
 @interface KDEImage : NSObject
 
 @property (nonatomic, readonly, assign) int pixelWidth;
 @property (nonatomic, readonly, assign) int pixelHeight;
 
+- (instancetype) initWithWidth:(int)width
+                        height:(int)height
+                         color:(KDEImagePixel)color;
 - (instancetype) initWithContentsOfFile:(NSString *)path;
 - (instancetype) initWithNSImage:(NSImage *)image;
 
 - (void) savePNGToPath:(NSString *)path;
 
+- (void) clearToColor:(KDEImagePixel)color;
 - (void) convertToLuminosity;
 
 - (BOOL) dimensionsAreEqualWith:(KDEImage *)image;

@@ -11,6 +11,17 @@
 #import "KDEImage+Private.h"
 
 
+KDEImagePixel KDEImagePixelMake( uint8_t red, uint8_t green, uint8_t blue, uint8_t alpha)
+{
+    return (KDEImagePixel){ red, green, blue, alpha};
+}
+
+NSString *NSStringFromKDEImagePixel( KDEImagePixel pixel)
+{
+    return [NSString stringWithFormat:@"{ r:%d, g:%d, b:%d, a:%d", pixel.red, pixel.green, pixel.blue, pixel.alpha];
+}
+
+
 @interface KDEImage ()
 
 @property (nonatomic, readwrite, strong) NSBitmapImageRep *imageRep;
@@ -23,6 +34,28 @@
 @dynamic pixelWidth, pixelHeight;
 
 #pragma mark - Initializers
+
+- (instancetype) initWithWidth:(int)width
+                        height:(int)height
+                         color:(KDEImagePixel)color
+{
+    self = [super init];
+    if( self)
+    {
+        self.imageRep = [[NSBitmapImageRep alloc] initWithBitmapDataPlanes:NULL
+                                                                pixelsWide:width
+                                                                pixelsHigh:height
+                                                             bitsPerSample:8
+                                                           samplesPerPixel:4
+                                                                  hasAlpha:YES
+                                                                  isPlanar:NO
+                                                            colorSpaceName:NSDeviceRGBColorSpace
+                                                               bytesPerRow:width * 4
+                                                              bitsPerPixel:32];
+        [self clearToColor:color];
+    }
+    return self;
+}
 
 - (instancetype) initWithContentsOfFile:(NSString *)path
 {
@@ -45,7 +78,7 @@
                                                            samplesPerPixel:4
                                                                   hasAlpha:YES
                                                                   isPlanar:NO
-                                                            colorSpaceName:NSCalibratedRGBColorSpace
+                                                            colorSpaceName:NSDeviceRGBColorSpace
                                                                bytesPerRow:inputImageRep.pixelsWide * 4
                                                               bitsPerPixel:32];
         
@@ -84,6 +117,17 @@
               atomically:YES];
 }
 
+- (void) clearToColor:(KDEImagePixel)color
+{
+    KDEImagePixel *pixel = (KDEImagePixel *)self.imageRep.bitmapData;
+    int count = self.pixelWidth * self.pixelHeight;
+    for( int i=0; i<count; i++)
+    {
+        pixel->bits = color.bits;
+        pixel++;
+    }
+}
+
 - (void) convertToLuminosity
 {
     KDEImagePixel *pixel = (KDEImagePixel *)self.imageRep.bitmapData;
@@ -113,19 +157,19 @@
     if( [self dimensionsAreEqualWith:image] == NO) { return NO; }
     if( self == image) { return YES; }
     
-    uint32_t *sourcePixel = (uint32_t *)image.imageRep.bitmapData;
-    uint32_t *destinationPixel = (uint32_t *)self.imageRep.bitmapData;
+    KDEImagePixel *pixel = (KDEImagePixel *)self.imageRep.bitmapData;
+    KDEImagePixel *imagePixel = (KDEImagePixel *)image.imageRep.bitmapData;
     int count = (int)self.imageRep.pixelsWide * (int)self.imageRep.pixelsHigh;
     
     for( int i=0; i<count; i++)
     {
-        if( *sourcePixel != *destinationPixel)
+        if( pixel->bits != imagePixel->bits)
         {
             return NO;
         }
         
-        sourcePixel++;
-        destinationPixel++;
+        pixel++;
+        imagePixel++;
     }
     
     return YES;
