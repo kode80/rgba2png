@@ -10,4 +10,7 @@
 
 @interface KDEImageBlueprintEditCellView : NSTableCellView
 
+@property (nonatomic, readwrite, weak) IBOutlet NSTextField *outputFilename;
+@property (nonatomic, readwrite, weak) IBOutlet NSTextField *outputFullPath;
+
 @end

@@ -90,7 +90,10 @@
     
     if( tableView.selectedRow == row)
     {
-        NSTableCellView *selectedCell = [tableView makeViewWithIdentifier:@"DetailCell" owner:self];
+        KDEImageBlueprintEditCellView *selectedCell = (KDEImageBlueprintEditCellView *)[tableView makeViewWithIdentifier:@"DetailCell"
+                                                                                                                   owner:self];
+        selectedCell.outputFilename.stringValue = blueprint.outputPath ? blueprint.outputPath.lastPathComponent : @"";
+        selectedCell.outputFullPath.stringValue = blueprint.outputPath ? blueprint.outputPath : @"";
         return selectedCell;
     }
     
