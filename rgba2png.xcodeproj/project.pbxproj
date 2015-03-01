@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2032F3181AA2021B00700661 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2032F3171AA2021B00700661 /* main.m */; };
-		2032F31E1AA2021B00700661 /* Document.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2032F31C1AA2021B00700661 /* Document.xib */; };
+		2032F31E1AA2021B00700661 /* DocumentWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2032F31C1AA2021B00700661 /* DocumentWindow.xib */; };
 		2032F3201AA2021B00700661 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2032F31F1AA2021B00700661 /* Images.xcassets */; };
 		2032F3231AA2021B00700661 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2032F3211AA2021B00700661 /* MainMenu.xib */; };
 		2032F32F1AA2021B00700661 /* rgba2pngTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2032F32E1AA2021B00700661 /* rgba2pngTests.m */; };
@@ -24,6 +24,7 @@
 		2054E1181AA280FC00ADCD0D /* KDEImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 2054E1161AA280FC00ADCD0D /* KDEImage.m */; };
 		2054E11C1AA283F800ADCD0D /* KDEImageBlueprint.m in Sources */ = {isa = PBXBuildFile; fileRef = 2054E11B1AA283F800ADCD0D /* KDEImageBlueprint.m */; };
 		2054E11F1AA287A200ADCD0D /* KDEImageChannelSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2054E11E1AA287A200ADCD0D /* KDEImageChannelSource.m */; };
+		2054E1231AA29EC500ADCD0D /* KDEDocumentWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2054E1221AA29EC500ADCD0D /* KDEDocumentWindowController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +41,7 @@
 		2032F30F1AA2021B00700661 /* rgba2png.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rgba2png.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2032F3131AA2021B00700661 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2032F3171AA2021B00700661 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		2032F31D1AA2021B00700661 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/Document.xib; sourceTree = "<group>"; };
+		2032F31D1AA2021B00700661 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/DocumentWindow.xib; sourceTree = "<group>"; };
 		2032F31F1AA2021B00700661 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2032F3221AA2021B00700661 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		2032F3281AA2021B00700661 /* rgba2pngTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = rgba2pngTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,6 +65,8 @@
 		2054E11B1AA283F800ADCD0D /* KDEImageBlueprint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KDEImageBlueprint.m; sourceTree = "<group>"; };
 		2054E11D1AA287A200ADCD0D /* KDEImageChannelSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KDEImageChannelSource.h; sourceTree = "<group>"; };
 		2054E11E1AA287A200ADCD0D /* KDEImageChannelSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KDEImageChannelSource.m; sourceTree = "<group>"; };
+		2054E1211AA29EC500ADCD0D /* KDEDocumentWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KDEDocumentWindowController.h; sourceTree = "<group>"; };
+		2054E1221AA29EC500ADCD0D /* KDEDocumentWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KDEDocumentWindowController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,7 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				2054E0F71AA2316C00ADCD0D /* Source */,
-				2032F31C1AA2021B00700661 /* Document.xib */,
+				2032F31C1AA2021B00700661 /* DocumentWindow.xib */,
 				2032F31F1AA2021B00700661 /* Images.xcassets */,
 				2032F3211AA2021B00700661 /* MainMenu.xib */,
 				2032F3121AA2021B00700661 /* Supporting Files */,
@@ -150,6 +153,7 @@
 		2054E0F71AA2316C00ADCD0D /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				2054E1201AA29EA300ADCD0D /* Controllers */,
 				2054E1111AA280FC00ADCD0D /* Document */,
 				2054E1141AA280FC00ADCD0D /* Image */,
 				2054E0F81AA2316C00ADCD0D /* AppDelegate.h */,
@@ -179,6 +183,15 @@
 				2054E1161AA280FC00ADCD0D /* KDEImage.m */,
 			);
 			path = Image;
+			sourceTree = "<group>";
+		};
+		2054E1201AA29EA300ADCD0D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2054E1211AA29EC500ADCD0D /* KDEDocumentWindowController.h */,
+				2054E1221AA29EC500ADCD0D /* KDEDocumentWindowController.m */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,7 +274,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2032F31E1AA2021B00700661 /* Document.xib in Resources */,
+				2032F31E1AA2021B00700661 /* DocumentWindow.xib in Resources */,
 				2032F3201AA2021B00700661 /* Images.xcassets in Resources */,
 				2032F3231AA2021B00700661 /* MainMenu.xib in Resources */,
 			);
@@ -291,6 +304,7 @@
 				2054E1171AA280FC00ADCD0D /* Document.m in Sources */,
 				2054E0FE1AA2316C00ADCD0D /* AppDelegate.m in Sources */,
 				2032F3181AA2021B00700661 /* main.m in Sources */,
+				2054E1231AA29EC500ADCD0D /* KDEDocumentWindowController.m in Sources */,
 				2054E11C1AA283F800ADCD0D /* KDEImageBlueprint.m in Sources */,
 				2054E11F1AA287A200ADCD0D /* KDEImageChannelSource.m in Sources */,
 			);
@@ -316,12 +330,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		2032F31C1AA2021B00700661 /* Document.xib */ = {
+		2032F31C1AA2021B00700661 /* DocumentWindow.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				2032F31D1AA2021B00700661 /* Base */,
 			);
-			name = Document.xib;
+			name = DocumentWindow.xib;
 			sourceTree = "<group>";
 		};
 		2032F3211AA2021B00700661 /* MainMenu.xib */ = {
