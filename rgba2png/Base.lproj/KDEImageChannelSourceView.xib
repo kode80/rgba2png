@@ -75,6 +75,16 @@
                     <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </box>
+                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NOz-qO-pjk">
+                    <rect key="frame" x="55" y="122" width="38" height="32"/>
+                    <buttonCell key="cell" type="push" title="..." bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="80u-P8-ESZ">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="channelSourceClick:" target="KgP-oy-hCn" id="xnT-1a-tg5"/>
+                    </connections>
+                </button>
             </subviews>
             <connections>
                 <outlet property="channelAlias" destination="kgC-ne-kKC" id="KvW-4B-3bI"/>

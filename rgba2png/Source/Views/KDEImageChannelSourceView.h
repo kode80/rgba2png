@@ -16,6 +16,7 @@
 @property (nonatomic, readwrite, weak) IBOutlet NSSlider *clearValue;
 @property (nonatomic, readwrite, weak) IBOutlet NSBox *clearValueView;
 
+- (IBAction) channelSourceClick:(id)sender;
 - (IBAction) clearValueDidChange:(id)sender;
 
 @end
