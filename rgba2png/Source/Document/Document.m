@@ -8,16 +8,27 @@
 
 #import "Document.h"
 
+#import "KDEImageBlueprint.h"
+
+
+NSString * const DocumentKeyImageBlueprints = @"ImageBlueprints";
+
+
 @interface Document ()
+
+@property (nonatomic, readwrite, copy) NSArray *imageBlueprints;
 
 @end
 
+
 @implementation Document
 
-- (instancetype)init {
+- (instancetype)init
+{
     self = [super init];
-    if (self) {
-        // Add your subclass-specific initialization here.
+    if (self)
+    {
+        self.imageBlueprints = @[];
     }
     return self;
 }
@@ -38,17 +49,44 @@
 }
 
 - (NSData *)dataOfType:(NSString *)typeName error:(NSError **)outError {
-    // Insert code here to write your document to data of the specified type. If outError != NULL, ensure that you create and set an appropriate error when returning nil.
-    // You can also choose to override -fileWrapperOfType:error:, -writeToURL:ofType:error:, or -writeToURL:ofType:forSaveOperation:originalContentsURL:error: instead.
-    [NSException raise:@"UnimplementedMethod" format:@"%@ is unimplemented", NSStringFromSelector(_cmd)];
-    return nil;
+    
+    NSMutableDictionary *doc = [NSMutableDictionary dictionary];
+
+    NSMutableArray *blueprintDictionaries = [NSMutableArray array];
+    for( KDEImageBlueprint *blueprint in self.imageBlueprints)
+    {
+        [blueprintDictionaries addObject:[blueprint writeDocumentDictionary]];
+    }
+    doc[ DocumentKeyImageBlueprints] = blueprintDictionaries;
+    
+    return [NSPropertyListSerialization dataWithPropertyList:doc
+                                                      format:NSPropertyListXMLFormat_v1_0
+                                                     options:0
+                                                       error:outError];
 }
 
-- (BOOL)readFromData:(NSData *)data ofType:(NSString *)typeName error:(NSError **)outError {
-    // Insert code here to read your document from the given data of the specified type. If outError != NULL, ensure that you create and set an appropriate error when returning NO.
-    // You can also choose to override -readFromFileWrapper:ofType:error: or -readFromURL:ofType:error: instead.
-    // If you override either of these, you should also override -isEntireFileLoaded to return NO if the contents are lazily loaded.
-    [NSException raise:@"UnimplementedMethod" format:@"%@ is unimplemented", NSStringFromSelector(_cmd)];
+- (BOOL)readFromData:(NSData *)data ofType:(NSString *)typeName error:(NSError **)outError
+{
+    NSDictionary *doc = [NSPropertyListSerialization propertyListWithData:data
+                                                                  options:NSPropertyListImmutable
+                                                                   format:NULL
+                                                                    error:outError];
+    
+    if( *outError)
+    {
+        return NO;
+    }
+    
+    NSMutableArray *blueprints = [NSMutableArray array];
+    KDEImageBlueprint *blueprint;
+    for( NSDictionary *blueprintDictionary in doc[ DocumentKeyImageBlueprints])
+    {
+        blueprint = [KDEImageBlueprint new];
+        [blueprint readFromDocumentDictionary:blueprintDictionary];
+        [blueprints addObject:blueprintDictionary];
+    }
+    self.imageBlueprints = [NSArray arrayWithArray:blueprints];
+    
     return YES;
 }
 

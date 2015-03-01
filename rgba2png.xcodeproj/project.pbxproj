@@ -22,6 +22,8 @@
 		2054E1101AA25CB800ADCD0D /* TestImage_r236g246b106.png in Resources */ = {isa = PBXBuildFile; fileRef = 2054E10D1AA25CB800ADCD0D /* TestImage_r236g246b106.png */; };
 		2054E1171AA280FC00ADCD0D /* Document.m in Sources */ = {isa = PBXBuildFile; fileRef = 2054E1131AA280FC00ADCD0D /* Document.m */; };
 		2054E1181AA280FC00ADCD0D /* KDEImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 2054E1161AA280FC00ADCD0D /* KDEImage.m */; };
+		2054E11C1AA283F800ADCD0D /* KDEImageBlueprint.m in Sources */ = {isa = PBXBuildFile; fileRef = 2054E11B1AA283F800ADCD0D /* KDEImageBlueprint.m */; };
+		2054E11F1AA287A200ADCD0D /* KDEImageChannelSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2054E11E1AA287A200ADCD0D /* KDEImageChannelSource.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,10 @@
 		2054E1151AA280FC00ADCD0D /* KDEImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KDEImage.h; sourceTree = "<group>"; };
 		2054E1161AA280FC00ADCD0D /* KDEImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KDEImage.m; sourceTree = "<group>"; };
 		2054E1191AA2810B00ADCD0D /* KDEImage+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KDEImage+Private.h"; sourceTree = "<group>"; };
+		2054E11A1AA283F800ADCD0D /* KDEImageBlueprint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KDEImageBlueprint.h; sourceTree = "<group>"; };
+		2054E11B1AA283F800ADCD0D /* KDEImageBlueprint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KDEImageBlueprint.m; sourceTree = "<group>"; };
+		2054E11D1AA287A200ADCD0D /* KDEImageChannelSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KDEImageChannelSource.h; sourceTree = "<group>"; };
+		2054E11E1AA287A200ADCD0D /* KDEImageChannelSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KDEImageChannelSource.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +163,10 @@
 			children = (
 				2054E1121AA280FC00ADCD0D /* Document.h */,
 				2054E1131AA280FC00ADCD0D /* Document.m */,
+				2054E11A1AA283F800ADCD0D /* KDEImageBlueprint.h */,
+				2054E11B1AA283F800ADCD0D /* KDEImageBlueprint.m */,
+				2054E11D1AA287A200ADCD0D /* KDEImageChannelSource.h */,
+				2054E11E1AA287A200ADCD0D /* KDEImageChannelSource.m */,
 			);
 			path = Document;
 			sourceTree = "<group>";
@@ -281,6 +291,8 @@
 				2054E1171AA280FC00ADCD0D /* Document.m in Sources */,
 				2054E0FE1AA2316C00ADCD0D /* AppDelegate.m in Sources */,
 				2032F3181AA2021B00700661 /* main.m in Sources */,
+				2054E11C1AA283F800ADCD0D /* KDEImageBlueprint.m in Sources */,
+				2054E11F1AA287A200ADCD0D /* KDEImageChannelSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
