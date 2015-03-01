@@ -104,33 +104,33 @@
     return cell;
 }
 
-- (BOOL) tableView:(NSTableView *)tableView shouldSelectRow:(NSInteger)row
-{
-    NSTableRowView *rowView = [tableView rowViewAtRow:row
-                                      makeIfNecessary:NO];
-    rowView.backgroundColor = [NSColor colorWithDeviceRed:0.911 green:0.936 blue:0.964 alpha:1.000];
-    
-    if( self.previousSelectedRow > -1)
-    {
-        rowView = [tableView rowViewAtRow:self.previousSelectedRow
-                          makeIfNecessary:NO];
-        rowView.backgroundColor = [NSColor whiteColor];
-    }
-
-    return YES;
-}
-
 - (void)tableViewSelectionDidChange:(NSNotification *)notification
 {
     NSTableView *tableView = notification.object;
     NSIndexSet *columns = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, 1)];
-    NSMutableIndexSet *rows = [NSMutableIndexSet indexSetWithIndex:self.previousSelectedRow];
-    [rows addIndex:tableView.selectedRow];
-
-    [tableView reloadDataForRowIndexes:rows
-                         columnIndexes:columns];
+    NSMutableIndexSet *rows = [NSMutableIndexSet indexSet];
+    NSTableRowView *rowView;
+    
+    if( self.tableView.selectedRow > -1)
+    {
+        rowView = [self.tableView rowViewAtRow:self.tableView.selectedRow
+                                          makeIfNecessary:NO];
+        rowView.backgroundColor = [NSColor colorWithDeviceRed:0.911 green:0.936 blue:0.964 alpha:1.000];
+        [rows addIndex:tableView.selectedRow];
+    }
+    
+    if( self.previousSelectedRow > -1)
+    {
+        rowView = [self.tableView rowViewAtRow:self.previousSelectedRow
+                               makeIfNecessary:NO];
+        rowView.backgroundColor = [NSColor whiteColor];
+        [rows addIndex:self.previousSelectedRow];
+    }
     
     self.previousSelectedRow = tableView.selectedRow;
+    
+    [tableView reloadDataForRowIndexes:rows
+                         columnIndexes:columns];
     [tableView noteHeightOfRowsWithIndexesChanged:rows];
 }
 
