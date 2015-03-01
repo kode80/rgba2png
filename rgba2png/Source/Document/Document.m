@@ -84,7 +84,7 @@ NSString * const DocumentKeyImageBlueprints = @"ImageBlueprints";
     {
         blueprint = [KDEImageBlueprint new];
         [blueprint readFromDocumentDictionary:blueprintDictionary];
-        [blueprints addObject:blueprintDictionary];
+        [blueprints addObject:blueprint];
     }
     self.imageBlueprints = [NSArray arrayWithArray:blueprints];
     
