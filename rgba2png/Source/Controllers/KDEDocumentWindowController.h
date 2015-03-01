@@ -16,4 +16,6 @@
 - (IBAction) addImageBlueprint:(id)sender;
 - (IBAction) removeSelectedImageBlueprint:(id)sender;
 
+- (IBAction) pickImageBlueprintOutputPath:(id)sender;
+
 @end

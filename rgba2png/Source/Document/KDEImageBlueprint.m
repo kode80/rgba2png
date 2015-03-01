@@ -9,6 +9,7 @@
 #import "KDEImageBlueprint.h"
 
 
+NSString * const KDEImageBluePrintKeyOutputPath = @"OutputPath";
 NSString * const KDEImageBluePrintKeyRedChannel = @"RedChannel";
 NSString * const KDEImageBluePrintKeyGreenChannel = @"GreenChannel";
 NSString * const KDEImageBluePrintKeyBlueChannel = @"BlueChannel";
@@ -44,6 +45,7 @@ NSString * const KDEImageBluePrintKeyAlphaChannel = @"AlphaChannel";
 
 - (void) readFromDocumentDictionary:(NSDictionary *)dictionary
 {
+    self.outputPath = dictionary[ KDEImageBluePrintKeyOutputPath];
     [self.redChannel readFromDocumentDictionary:dictionary[ KDEImageBluePrintKeyRedChannel]];
     [self.greenChannel readFromDocumentDictionary:dictionary[ KDEImageBluePrintKeyGreenChannel]];
     [self.blueChannel readFromDocumentDictionary:dictionary[ KDEImageBluePrintKeyBlueChannel]];
@@ -53,6 +55,11 @@ NSString * const KDEImageBluePrintKeyAlphaChannel = @"AlphaChannel";
 - (NSDictionary *) writeDocumentDictionary
 {
     NSMutableDictionary *doc = [NSMutableDictionary dictionary];
+    
+    if( self.outputPath)
+    {
+        doc[ KDEImageBluePrintKeyOutputPath] = self.outputPath;
+    }
     
     doc[ KDEImageBluePrintKeyRedChannel] = [self.redChannel writeDocumentDictionary];
     doc[ KDEImageBluePrintKeyGreenChannel] = [self.greenChannel writeDocumentDictionary];

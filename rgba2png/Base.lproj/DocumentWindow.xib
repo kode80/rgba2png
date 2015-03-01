@@ -48,7 +48,7 @@
                                             </textFieldCell>
                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                             <prototypeCellViews>
-                                                <tableCellView identifier="Cell" id="lgA-at-Fd5">
+                                                <tableCellView identifier="Cell" id="lgA-at-Fd5" customClass="KDEImageBlueprintCellView">
                                                     <rect key="frame" x="1" y="1" width="504" height="40"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
@@ -62,6 +62,9 @@
                                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                                 <font key="font" metaFont="system"/>
                                                             </buttonCell>
+                                                            <connections>
+                                                                <action selector="pickImageBlueprintOutputPath:" target="-2" id="J8V-Vm-McJ"/>
+                                                            </connections>
                                                         </button>
                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kg9-eN-gKL">
                                                             <rect key="frame" x="32" y="12" width="97" height="17"/>
@@ -85,7 +88,7 @@
                                                         <outlet property="textField" destination="kg9-eN-gKL" id="A47-vh-zOx"/>
                                                     </connections>
                                                 </tableCellView>
-                                                <tableCellView identifier="DetailCell" id="nkf-7S-Wm5">
+                                                <tableCellView identifier="DetailCell" id="nkf-7S-Wm5" customClass="KDEImageBlueprintEditCellView">
                                                     <rect key="frame" x="1" y="43" width="502" height="80"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
@@ -97,9 +100,19 @@
                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                             </textFieldCell>
                                                         </textField>
+                                                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3C5-DG-Ush">
+                                                            <rect key="frame" x="91" y="16" width="48" height="48"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="42" id="L8d-4h-CPQ"/>
+                                                                <constraint firstAttribute="height" constant="42" id="oRI-D1-Xcz"/>
+                                                            </constraints>
+                                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" id="XWm-3l-ilc"/>
+                                                        </imageView>
                                                     </subviews>
                                                     <constraints>
                                                         <constraint firstAttribute="centerY" secondItem="3Rf-iR-ruP" secondAttribute="centerY" id="D8B-43-70Y"/>
+                                                        <constraint firstAttribute="bottom" secondItem="3C5-DG-Ush" secondAttribute="bottom" constant="19" id="GvS-Mw-6FS"/>
+                                                        <constraint firstItem="3C5-DG-Ush" firstAttribute="leading" secondItem="nkf-7S-Wm5" secondAttribute="leading" constant="94" id="Lw6-1H-lNw"/>
                                                         <constraint firstAttribute="centerX" secondItem="3Rf-iR-ruP" secondAttribute="centerX" id="zBB-JY-c3a"/>
                                                     </constraints>
                                                     <connections>

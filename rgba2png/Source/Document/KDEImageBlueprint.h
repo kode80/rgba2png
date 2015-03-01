@@ -11,6 +11,7 @@
 
 @interface KDEImageBlueprint : NSObject
 
+@property (nonatomic, readwrite, copy) NSString *outputPath;
 @property (nonatomic, readonly, strong) KDEImageChannelSource *redChannel;
 @property (nonatomic, readonly, strong) KDEImageChannelSource *greenChannel;
 @property (nonatomic, readonly, strong) KDEImageChannelSource *blueChannel;

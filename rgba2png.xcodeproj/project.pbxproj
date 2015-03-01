@@ -25,6 +25,8 @@
 		2054E11C1AA283F800ADCD0D /* KDEImageBlueprint.m in Sources */ = {isa = PBXBuildFile; fileRef = 2054E11B1AA283F800ADCD0D /* KDEImageBlueprint.m */; };
 		2054E11F1AA287A200ADCD0D /* KDEImageChannelSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2054E11E1AA287A200ADCD0D /* KDEImageChannelSource.m */; };
 		2054E1231AA29EC500ADCD0D /* KDEDocumentWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2054E1221AA29EC500ADCD0D /* KDEDocumentWindowController.m */; };
+		20856A9A1AA36E500015A107 /* KDEImageBlueprintCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 20856A991AA36E500015A107 /* KDEImageBlueprintCellView.m */; };
+		20856A9D1AA36E630015A107 /* KDEImageBlueprintEditCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 20856A9C1AA36E630015A107 /* KDEImageBlueprintEditCellView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,10 @@
 		2054E11E1AA287A200ADCD0D /* KDEImageChannelSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KDEImageChannelSource.m; sourceTree = "<group>"; };
 		2054E1211AA29EC500ADCD0D /* KDEDocumentWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KDEDocumentWindowController.h; sourceTree = "<group>"; };
 		2054E1221AA29EC500ADCD0D /* KDEDocumentWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KDEDocumentWindowController.m; sourceTree = "<group>"; };
+		20856A981AA36E500015A107 /* KDEImageBlueprintCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KDEImageBlueprintCellView.h; sourceTree = "<group>"; };
+		20856A991AA36E500015A107 /* KDEImageBlueprintCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KDEImageBlueprintCellView.m; sourceTree = "<group>"; };
+		20856A9B1AA36E630015A107 /* KDEImageBlueprintEditCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KDEImageBlueprintEditCellView.h; sourceTree = "<group>"; };
+		20856A9C1AA36E630015A107 /* KDEImageBlueprintEditCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KDEImageBlueprintEditCellView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +159,7 @@
 		2054E0F71AA2316C00ADCD0D /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				20856A971AA36E210015A107 /* Views */,
 				2054E1201AA29EA300ADCD0D /* Controllers */,
 				2054E1111AA280FC00ADCD0D /* Document */,
 				2054E1141AA280FC00ADCD0D /* Image */,
@@ -192,6 +199,17 @@
 				2054E1221AA29EC500ADCD0D /* KDEDocumentWindowController.m */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		20856A971AA36E210015A107 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				20856A981AA36E500015A107 /* KDEImageBlueprintCellView.h */,
+				20856A991AA36E500015A107 /* KDEImageBlueprintCellView.m */,
+				20856A9B1AA36E630015A107 /* KDEImageBlueprintEditCellView.h */,
+				20856A9C1AA36E630015A107 /* KDEImageBlueprintEditCellView.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -305,6 +323,8 @@
 				2054E0FE1AA2316C00ADCD0D /* AppDelegate.m in Sources */,
 				2032F3181AA2021B00700661 /* main.m in Sources */,
 				2054E1231AA29EC500ADCD0D /* KDEDocumentWindowController.m in Sources */,
+				20856A9A1AA36E500015A107 /* KDEImageBlueprintCellView.m in Sources */,
+				20856A9D1AA36E630015A107 /* KDEImageBlueprintEditCellView.m in Sources */,
 				2054E11C1AA283F800ADCD0D /* KDEImageBlueprint.m in Sources */,
 				2054E11F1AA287A200ADCD0D /* KDEImageChannelSource.m in Sources */,
 			);
