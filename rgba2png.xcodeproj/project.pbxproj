@@ -12,6 +12,8 @@
 		2032F3201AA2021B00700661 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2032F31F1AA2021B00700661 /* Images.xcassets */; };
 		2032F3231AA2021B00700661 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2032F3211AA2021B00700661 /* MainMenu.xib */; };
 		2032F32F1AA2021B00700661 /* rgba2pngTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2032F32E1AA2021B00700661 /* rgba2pngTests.m */; };
+		2038A0AB1AA3BC430009E6A1 /* KDEImageChannelSourceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2038A0AA1AA3BC430009E6A1 /* KDEImageChannelSourceView.m */; };
+		2038A0AE1AA3C80A0009E6A1 /* KDEImageChannelSourceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2038A0AC1AA3C80A0009E6A1 /* KDEImageChannelSourceView.xib */; };
 		2054E0FE1AA2316C00ADCD0D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2054E0F91AA2316C00ADCD0D /* AppDelegate.m */; };
 		2054E1021AA2478200ADCD0D /* KDEImageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2054E1011AA2478200ADCD0D /* KDEImageTests.m */; };
 		2054E1081AA24BDB00ADCD0D /* TestImage_Different.png in Resources */ = {isa = PBXBuildFile; fileRef = 2054E1051AA24BDB00ADCD0D /* TestImage_Different.png */; };
@@ -49,6 +51,9 @@
 		2032F3281AA2021B00700661 /* rgba2pngTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = rgba2pngTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2032F32D1AA2021B00700661 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2032F32E1AA2021B00700661 /* rgba2pngTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = rgba2pngTests.m; sourceTree = "<group>"; };
+		2038A0A91AA3BC430009E6A1 /* KDEImageChannelSourceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KDEImageChannelSourceView.h; sourceTree = "<group>"; };
+		2038A0AA1AA3BC430009E6A1 /* KDEImageChannelSourceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KDEImageChannelSourceView.m; sourceTree = "<group>"; };
+		2038A0AD1AA3C80A0009E6A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/KDEImageChannelSourceView.xib; sourceTree = "<group>"; };
 		2054E0F81AA2316C00ADCD0D /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2054E0F91AA2316C00ADCD0D /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		2054E1011AA2478200ADCD0D /* KDEImageTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KDEImageTests.m; sourceTree = "<group>"; };
@@ -116,6 +121,7 @@
 			children = (
 				2054E0F71AA2316C00ADCD0D /* Source */,
 				2032F31C1AA2021B00700661 /* DocumentWindow.xib */,
+				2038A0AC1AA3C80A0009E6A1 /* KDEImageChannelSourceView.xib */,
 				2032F31F1AA2021B00700661 /* Images.xcassets */,
 				2032F3211AA2021B00700661 /* MainMenu.xib */,
 				2032F3121AA2021B00700661 /* Supporting Files */,
@@ -208,6 +214,8 @@
 				20856A991AA36E500015A107 /* KDEImageBlueprintCellView.m */,
 				20856A9B1AA36E630015A107 /* KDEImageBlueprintEditCellView.h */,
 				20856A9C1AA36E630015A107 /* KDEImageBlueprintEditCellView.m */,
+				2038A0A91AA3BC430009E6A1 /* KDEImageChannelSourceView.h */,
+				2038A0AA1AA3BC430009E6A1 /* KDEImageChannelSourceView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -294,6 +302,7 @@
 			files = (
 				2032F31E1AA2021B00700661 /* DocumentWindow.xib in Resources */,
 				2032F3201AA2021B00700661 /* Images.xcassets in Resources */,
+				2038A0AE1AA3C80A0009E6A1 /* KDEImageChannelSourceView.xib in Resources */,
 				2032F3231AA2021B00700661 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -324,6 +333,7 @@
 				2032F3181AA2021B00700661 /* main.m in Sources */,
 				2054E1231AA29EC500ADCD0D /* KDEDocumentWindowController.m in Sources */,
 				20856A9A1AA36E500015A107 /* KDEImageBlueprintCellView.m in Sources */,
+				2038A0AB1AA3BC430009E6A1 /* KDEImageChannelSourceView.m in Sources */,
 				20856A9D1AA36E630015A107 /* KDEImageBlueprintEditCellView.m in Sources */,
 				2054E11C1AA283F800ADCD0D /* KDEImageBlueprint.m in Sources */,
 				2054E11F1AA287A200ADCD0D /* KDEImageChannelSource.m in Sources */,
@@ -364,6 +374,14 @@
 				2032F3221AA2021B00700661 /* Base */,
 			);
 			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		2038A0AC1AA3C80A0009E6A1 /* KDEImageChannelSourceView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2038A0AD1AA3C80A0009E6A1 /* Base */,
+			);
+			name = KDEImageChannelSourceView.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
