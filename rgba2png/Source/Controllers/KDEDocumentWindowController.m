@@ -25,7 +25,7 @@
 - (void)windowDidLoad {
     [super windowDidLoad];
     
-    self.previousSelectedRow = 0;
+    self.previousSelectedRow = -1;
     self.window.titleVisibility = NSWindowTitleHidden;
 }
 
@@ -80,7 +80,7 @@
 
 - (CGFloat) tableView:(NSTableView *)tableView heightOfRow:(NSInteger)row
 {
-    return tableView.selectedRow == row ? 100.0f : 40.0f;
+    return tableView.selectedRow == row ? 160.0f : 30.0f;
 }
 
 - (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
@@ -102,6 +102,22 @@
     cell.outputFilename.stringValue = blueprint.outputPath ? blueprint.outputPath.lastPathComponent : @"";
     cell.outputFullPath.stringValue = blueprint.outputPath ? blueprint.outputPath : @"";
     return cell;
+}
+
+- (BOOL) tableView:(NSTableView *)tableView shouldSelectRow:(NSInteger)row
+{
+    NSTableRowView *rowView = [tableView rowViewAtRow:row
+                                      makeIfNecessary:NO];
+    rowView.backgroundColor = [NSColor colorWithDeviceRed:0.911 green:0.936 blue:0.964 alpha:1.000];
+    
+    if( self.previousSelectedRow > -1)
+    {
+        rowView = [tableView rowViewAtRow:self.previousSelectedRow
+                          makeIfNecessary:NO];
+        rowView.backgroundColor = [NSColor whiteColor];
+    }
+
+    return YES;
 }
 
 - (void)tableViewSelectionDidChange:(NSNotification *)notification

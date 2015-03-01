@@ -25,14 +25,14 @@
                 <subviews>
                     <scrollView autohidesScrollers="YES" horizontalLineScroll="162" horizontalPageScroll="10" verticalLineScroll="162" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="84C-kp-8P1">
                         <rect key="frame" x="0.0" y="0.0" width="507" height="413"/>
-                        <clipView key="contentView" id="lqA-bc-UF4">
+                        <clipView key="contentView" drawsBackground="NO" id="lqA-bc-UF4">
                             <rect key="frame" x="1" y="0.0" width="238" height="134"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnSelection="YES" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="160" rowSizeStyle="automatic" viewBased="YES" id="GCn-3k-ggk">
+                                <tableView appearanceType="vibrantLight" verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="none" columnReordering="NO" columnSelection="YES" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="160" rowSizeStyle="automatic" viewBased="YES" id="GCn-3k-ggk">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <size key="intercellSpacing" width="3" height="2"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                     <tableColumns>
                                         <tableColumn width="502" minWidth="40" maxWidth="1000000" id="yYk-dU-xof">
@@ -165,7 +165,7 @@
                                                             </textFieldCell>
                                                         </textField>
                                                         <button horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="754" translatesAutoresizingMaskIntoConstraints="NO" id="zwn-UI-0ph">
-                                                            <rect key="frame" x="381" y="130" width="115" height="32"/>
+                                                            <rect key="frame" x="381" y="129" width="115" height="32"/>
                                                             <buttonCell key="cell" type="push" title="Output Path" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="YEf-wL-SNd">
                                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                                 <font key="font" metaFont="system"/>
@@ -184,7 +184,7 @@
                                                         <constraint firstAttribute="bottom" secondItem="3C5-DG-Ush" secondAttribute="bottom" constant="19" id="GvS-Mw-6FS"/>
                                                         <constraint firstItem="3C5-DG-Ush" firstAttribute="leading" secondItem="nkf-7S-Wm5" secondAttribute="leading" constant="94" id="Lw6-1H-lNw"/>
                                                         <constraint firstItem="zwn-UI-0ph" firstAttribute="leading" secondItem="lts-vO-zaN" secondAttribute="trailing" constant="10" id="O4g-2b-n58"/>
-                                                        <constraint firstItem="zwn-UI-0ph" firstAttribute="centerY" secondItem="lts-vO-zaN" secondAttribute="centerY" id="Yzd-FU-TB0"/>
+                                                        <constraint firstItem="zwn-UI-0ph" firstAttribute="centerY" secondItem="lts-vO-zaN" secondAttribute="centerY" constant="1" id="Yzd-FU-TB0"/>
                                                         <constraint firstItem="lts-vO-zaN" firstAttribute="centerY" secondItem="Vnf-P7-Z4A" secondAttribute="centerY" id="pVb-SH-XS4"/>
                                                         <constraint firstItem="Rh4-Nl-ztK" firstAttribute="top" secondItem="nkf-7S-Wm5" secondAttribute="top" constant="6" id="pt0-67-SuX"/>
                                                         <constraint firstItem="Rh4-Nl-ztK" firstAttribute="leading" secondItem="nkf-7S-Wm5" secondAttribute="leading" constant="12" id="uMs-sT-GlW"/>
@@ -204,13 +204,13 @@
                                     </connections>
                                 </tableView>
                             </subviews>
-                            <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            <nil key="backgroundColor"/>
                         </clipView>
-                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="qCF-En-Cbw">
+                        <scroller key="horizontalScroller" hidden="YES" appearanceType="vibrantLight" verticalHuggingPriority="750" horizontal="YES" id="qCF-En-Cbw">
                             <rect key="frame" x="1" y="119" width="223" height="15"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
-                        <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="Eak-Wv-pzc">
+                        <scroller key="verticalScroller" hidden="YES" appearanceType="vibrantLight" verticalHuggingPriority="750" horizontal="NO" id="Eak-Wv-pzc">
                             <rect key="frame" x="224" y="17" width="15" height="102"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
