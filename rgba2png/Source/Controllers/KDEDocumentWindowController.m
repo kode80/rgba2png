@@ -9,6 +9,8 @@
 #import "KDEDocumentWindowController.h"
 #import "Document.h"
 #import "KDEImageBlueprint.h"
+#import "KDEImageBlueprintCellView.h"
+#import "KDEImageBlueprintEditCellView.h"
 
 
 @interface KDEDocumentWindowController ()
@@ -92,8 +94,10 @@
         return selectedCell;
     }
     
-    NSTableCellView *cell = [tableView makeViewWithIdentifier:@"Cell" owner:self];
-    cell.textField.stringValue = blueprint.outputPath ? blueprint.outputPath : @"";
+    KDEImageBlueprintCellView *cell = (KDEImageBlueprintCellView *)[tableView makeViewWithIdentifier:@"Cell"
+                                                                                               owner:self];
+    cell.outputFilename.stringValue = blueprint.outputPath ? blueprint.outputPath.lastPathComponent : @"";
+    cell.outputFullPath.stringValue = blueprint.outputPath ? blueprint.outputPath : @"";
     return cell;
 }
 
