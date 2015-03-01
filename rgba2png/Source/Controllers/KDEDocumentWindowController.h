@@ -8,8 +8,12 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface KDEDocumentWindowController : NSWindowController
+@interface KDEDocumentWindowController : NSWindowController <NSTableViewDataSource, NSTableViewDelegate>
 
-@property (nonatomic, readwrite, weak) IBOutlet NSTextField *testLabel;
+@property (nonatomic, readwrite, weak) IBOutlet NSToolbar *toolbar;
+@property (nonatomic, readwrite, weak) IBOutlet NSTableView *tableView;
+
+- (IBAction) addImageBlueprint:(id)sender;
+- (IBAction) removeSelectedImageBlueprint:(id)sender;
 
 @end
