@@ -80,7 +80,7 @@
 
 - (CGFloat) tableView:(NSTableView *)tableView heightOfRow:(NSInteger)row
 {
-    return tableView.selectedRow == row ? 160.0f : 30.0f;
+    return tableView.selectedRow == row ? 182.0f : 30.0f;
 }
 
 - (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
@@ -115,7 +115,7 @@
     {
         rowView = [self.tableView rowViewAtRow:self.tableView.selectedRow
                                           makeIfNecessary:NO];
-        rowView.backgroundColor = [NSColor colorWithDeviceRed:0.911 green:0.936 blue:0.964 alpha:1.000];
+        rowView.backgroundColor = [NSColor colorWithDeviceRed:0.959 green:0.967 blue:0.977 alpha:1.000];//[NSColor colorWithDeviceRed:0.911 green:0.936 blue:0.964 alpha:1.000];
         [rows addIndex:tableView.selectedRow];
     }
     
