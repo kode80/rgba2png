@@ -7,6 +7,8 @@
 //
 
 #import "KDEDocumentWindowController.h"
+#import "Document.h"
+#import "KDEImageBlueprint.h"
 
 
 @interface KDEDocumentWindowController ()
@@ -27,19 +29,28 @@
 
 - (IBAction) addImageBlueprint:(id)sender
 {
-    NSLog(@"addImageBlueprint");
+    Document *document = (Document *)self.document;
+    KDEImageBlueprint *blueprint = [KDEImageBlueprint new];
+    [document addImageBlueprint:blueprint];
+    [self.tableView reloadData];
 }
 
 - (IBAction) removeSelectedImageBlueprint:(id)sender
 {
-    NSLog(@"removeSelectedImageBlueprint");
+    if( self.tableView.selectedRow > -1)
+    {
+        Document *document = (Document *)self.document;
+        [document removeImageBlueprintAtIndex:self.tableView.selectedRow];
+        [self.tableView reloadData];
+    }
 }
 
 #pragma mark NSTableViewDataSource
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView
 {
-    return 50;
+    Document *document = (Document *)self.document;
+    return document.imageBlueprints.count;
 }
 
 #pragma mark NSTableViewDelegate

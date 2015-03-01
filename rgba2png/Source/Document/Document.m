@@ -49,6 +49,24 @@ NSString * const DocumentKeyImageBlueprints = @"ImageBlueprints";
     [self addWindowController:controller];
 }
 
+- (void) addImageBlueprint:(KDEImageBlueprint *)blueprint
+{
+    if( [self.imageBlueprints containsObject:blueprint] == NO)
+    {
+        self.imageBlueprints = [self.imageBlueprints arrayByAddingObject:blueprint];
+    }
+}
+
+- (void) removeImageBlueprintAtIndex:(NSInteger)index
+{
+    if( self.imageBlueprints.count && index < self.imageBlueprints.count)
+    {
+        NSMutableArray *blueprints = [self.imageBlueprints mutableCopy];
+        [blueprints removeObjectAtIndex:index];
+        self.imageBlueprints = [NSArray arrayWithArray:blueprints];
+    }
+}
+
 - (NSData *)dataOfType:(NSString *)typeName error:(NSError **)outError {
     
     NSMutableDictionary *doc = [NSMutableDictionary dictionary];

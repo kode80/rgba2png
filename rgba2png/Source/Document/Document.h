@@ -8,9 +8,15 @@
 
 #import <Cocoa/Cocoa.h>
 
+
+@class KDEImageBlueprint;
+
 @interface Document : NSDocument
 
 @property (nonatomic, readonly, copy) NSArray *imageBlueprints;
+
+- (void) addImageBlueprint:(KDEImageBlueprint *)blueprint;
+- (void) removeImageBlueprintAtIndex:(NSInteger)index;
 
 @end
 
