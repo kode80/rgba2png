@@ -6,6 +6,7 @@ It is common in 3D shaders to use the various color channels of a texture to sto
 
 # Status/Roadmap
 rgba2png is functional but still in development. It is possible to create a project containing multiple image blueprints, edit all options of the blueprints and generate correct PNGs. Batch processing & automatic generation is not yet implemented (next on the list) and the UI is a little rough around the edges.  
+  
 ~~Image manipulation/export implementation~~  
 ~~Project file format serialization~~  
 ~~Placeholder UI~~  
