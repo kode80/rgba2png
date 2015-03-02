@@ -228,27 +228,29 @@
                     <constraint firstItem="84C-kp-8P1" firstAttribute="leading" secondItem="gIp-Ho-8D9" secondAttribute="leading" id="vej-2X-52K"/>
                 </constraints>
             </view>
-            <toolbar key="toolbar" implicitIdentifier="45046E0D-9059-4275-855A-E562C5068CEE" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="regular" id="63Z-Oe-BTO">
+            <toolbar key="toolbar" implicitIdentifier="45046E0D-9059-4275-855A-E562C5068CEE" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="small" id="63Z-Oe-BTO">
                 <allowedToolbarItems>
                     <toolbarItem implicitItemIdentifier="NSToolbarShowColorsItem" id="M3q-Ez-cse"/>
                     <toolbarItem implicitItemIdentifier="NSToolbarShowFontsItem" id="nbd-3O-Ar4"/>
                     <toolbarItem implicitItemIdentifier="NSToolbarPrintItem" id="c5O-bd-2Fc"/>
                     <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="PY3-q4-M2g"/>
                     <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="i35-W2-9Md"/>
-                    <toolbarItem implicitItemIdentifier="09EDBBF2-CEE2-4080-9F0E-602F670BDDAC" label="Add" paletteLabel="Add" tag="-1" image="NSAddTemplate" id="Wtd-vI-nDZ">
+                    <toolbarItem implicitItemIdentifier="09EDBBF2-CEE2-4080-9F0E-602F670BDDAC" label="Add" paletteLabel="Add" toolTip="Add new blueprint" tag="-1" image="NSAddTemplate" id="Wtd-vI-nDZ">
                         <connections>
                             <action selector="addImageBlueprint:" target="-2" id="E0a-Nn-6ub"/>
                         </connections>
                     </toolbarItem>
-                    <toolbarItem implicitItemIdentifier="4DCD494C-5897-4450-AB63-82263BB62FB2" label="Remove" paletteLabel="Remove" tag="-1" image="NSRemoveTemplate" id="OHi-B9-qwu">
+                    <toolbarItem implicitItemIdentifier="4DCD494C-5897-4450-AB63-82263BB62FB2" label="Remove" paletteLabel="Remove" toolTip="Remove selected blueprint" tag="-1" image="NSRemoveTemplate" id="OHi-B9-qwu">
                         <connections>
                             <action selector="removeSelectedImageBlueprint:" target="-2" id="YAO-GU-qj6"/>
                         </connections>
                     </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="0D0948AF-AA89-483A-855F-BB6651813A5B" label="Export PNG" paletteLabel="Export PNG" toolTip="Export selected blueprint" tag="-1" image="NSRefreshFreestandingTemplate" id="SDz-OF-Me2"/>
                 </allowedToolbarItems>
                 <defaultToolbarItems>
                     <toolbarItem reference="Wtd-vI-nDZ"/>
                     <toolbarItem reference="OHi-B9-qwu"/>
+                    <toolbarItem reference="SDz-OF-Me2"/>
                     <toolbarItem reference="i35-W2-9Md"/>
                 </defaultToolbarItems>
             </toolbar>
@@ -261,6 +263,7 @@
     <resources>
         <image name="NSActionTemplate" width="14" height="14"/>
         <image name="NSAddTemplate" width="11" height="11"/>
+        <image name="NSRefreshFreestandingTemplate" width="14" height="14"/>
         <image name="NSRemoveTemplate" width="11" height="11"/>
     </resources>
 </document>
