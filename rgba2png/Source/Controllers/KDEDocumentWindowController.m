@@ -11,11 +11,13 @@
 #import "KDEImageBlueprint.h"
 #import "KDEImageBlueprintCellView.h"
 #import "KDEImageBlueprintEditCellView.h"
+#import "KDEImageChannelSourceView.h"
 
 
-@interface KDEDocumentWindowController ()
+@interface KDEDocumentWindowController () <KDEImageChannelSourceViewDelegate>
 
 @property (nonatomic, readwrite, assign) NSInteger previousSelectedRow;
+@property (nonatomic, readwrite, strong) NSMapTable *imageChannelSourceViewToModel;
 
 @end
 
@@ -84,6 +86,23 @@
                   }];
 }
 
+- (void) presentImageOpenPanelWithInitialPath:(NSString *)initialPath
+                            completionHandler:(void (^)(NSString *filePath))handler
+{
+    NSOpenPanel *panel = [NSOpenPanel openPanel];
+    panel.allowedFileTypes = @[ @"jpg", @"png"];
+    panel.allowsMultipleSelection = NO;
+    panel.canChooseDirectories = NO;
+
+    [panel beginSheetModalForWindow:self.window
+                  completionHandler:^(NSInteger result){
+                      if (result == NSFileHandlingPanelOKButton)
+                      {
+                          handler( panel.URL.filePathURL.path);
+                      }
+                  }];
+}
+
 #pragma mark NSTableViewDataSource
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView
@@ -110,6 +129,27 @@
                                                                                                                    owner:self];
         selectedCell.outputFilename.stringValue = blueprint.outputPath ? blueprint.outputPath.lastPathComponent : @"";
         selectedCell.outputFullPath.stringValue = blueprint.outputPath ? blueprint.outputPath : @"";
+        
+        [selectedCell.redChannel displayImageChannelSource:blueprint.redChannel];
+        [selectedCell.greenChannel displayImageChannelSource:blueprint.greenChannel];
+        [selectedCell.blueChannel displayImageChannelSource:blueprint.blueChannel];
+        [selectedCell.alphaChannel displayImageChannelSource:blueprint.alphaChannel];
+        
+        self.imageChannelSourceViewToModel = [NSMapTable weakToWeakObjectsMapTable];
+        [self.imageChannelSourceViewToModel setObject:blueprint.redChannel
+                                               forKey:selectedCell.redChannel];
+        [self.imageChannelSourceViewToModel setObject:blueprint.greenChannel
+                                               forKey:selectedCell.greenChannel];
+        [self.imageChannelSourceViewToModel setObject:blueprint.blueChannel
+                                               forKey:selectedCell.blueChannel];
+        [self.imageChannelSourceViewToModel setObject:blueprint.alphaChannel
+                                               forKey:selectedCell.alphaChannel];
+        
+        selectedCell.redChannel.delegate = self;
+        selectedCell.greenChannel.delegate = self;
+        selectedCell.blueChannel.delegate = self;
+        selectedCell.alphaChannel.delegate = self;
+        
         return selectedCell;
     }
     
@@ -148,6 +188,38 @@
     [tableView reloadDataForRowIndexes:rows
                          columnIndexes:columns];
     [tableView noteHeightOfRowsWithIndexesChanged:rows];
+}
+
+#pragma mark KDEImageChannelSourceViewDelegate
+
+- (void) imageChannelSourceViewDidReceiveClick:(KDEImageChannelSourceView *)channelSourceView
+{
+    KDEImageChannelSource *channelSource = [self.imageChannelSourceViewToModel objectForKey:channelSourceView];
+    
+    if( channelSource.sourceImagePath)
+    {
+        
+    }
+    else
+    {
+        [self presentImageOpenPanelWithInitialPath:nil
+                                 completionHandler:^(NSString *filePath){
+                                     channelSource.sourceImagePath = filePath;
+                                     [channelSourceView displayImageChannelSource:channelSource];
+                                 }];
+    }
+}
+
+- (void) imageChannelSourceView:(KDEImageChannelSourceView *)channelSourceView didChangeSourceChannel:(KDEImageChannel)newChannel
+{
+    KDEImageChannelSource *channelSource = [self.imageChannelSourceViewToModel objectForKey:channelSourceView];
+    channelSource.sourceImageChannel = newChannel;
+}
+
+- (void) imageChannelSourceView:(KDEImageChannelSourceView *)channelSourceView didChangeClearValue:(uint8_t)newClearValue
+{
+    KDEImageChannelSource *channelSource = [self.imageChannelSourceViewToModel objectForKey:channelSourceView];
+    channelSource.clearValue = newClearValue;
 }
 
 

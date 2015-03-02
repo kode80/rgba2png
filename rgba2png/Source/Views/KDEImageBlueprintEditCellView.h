@@ -7,6 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "KDEImage.h"
 
 
 @class KDEImageChannelSourceView;

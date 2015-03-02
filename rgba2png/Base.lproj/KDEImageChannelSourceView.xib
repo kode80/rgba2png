@@ -58,6 +58,9 @@
                             </buttonCell>
                         </column>
                     </cells>
+                    <connections>
+                        <action selector="sourceChannelDidChange:" target="KgP-oy-hCn" id="QYm-Cb-koN"/>
+                    </connections>
                 </matrix>
                 <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ITE-NB-I3d">
                     <rect key="frame" x="1" y="18" width="88" height="20"/>
