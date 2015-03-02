@@ -7,12 +7,29 @@
 //
 
 #import "KDEImageChannelSource.h"
+#import "KDEImageBlueprint.h"
+
 
 NSString * const KDEImageChannelSourceDocumentKeyClearValue = @"ClearValue";
 NSString * const KDEImageChannelSourceDocumentKeySourceImagePath = @"SourceImagePath";
 NSString * const KDEImageChannelSourceDocumentKeySourceImageChannel = @"SourceImageChannel";
 
+
+@interface KDEImageChannelSource ()
+
+@property (nonatomic, readwrite, weak) KDEImageBlueprint *blueprint;
+
+@end
+
+
 @implementation KDEImageChannelSource
+
++ (instancetype) imageChannelSourceForBlueprint:(KDEImageBlueprint *)blueprint
+{
+    KDEImageChannelSource *source = [KDEImageChannelSource new];
+    source.blueprint = blueprint;
+    return source;
+}
 
 - (void) readFromDocumentDictionary:(NSDictionary *)dictionary
 {

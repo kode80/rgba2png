@@ -17,6 +17,8 @@
 @property (nonatomic, readonly, strong) KDEImageChannelSource *blueChannel;
 @property (nonatomic, readonly, strong) KDEImageChannelSource *alphaChannel;
 
+- (NSArray *) allChannelSourceImagePaths;
+
 - (void) readFromDocumentDictionary:(NSDictionary *)dictionary;
 - (NSDictionary *) writeDocumentDictionary;
 

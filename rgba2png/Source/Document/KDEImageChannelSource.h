@@ -10,11 +10,16 @@
 #import "KDEImage.h"
 
 
+@class KDEImageBlueprint;
+
 @interface KDEImageChannelSource : NSObject
 
+@property (nonatomic, readonly, weak) KDEImageBlueprint *blueprint;
 @property (nonatomic, readwrite, assign) uint8_t clearValue;
 @property (nonatomic, readwrite, copy) NSString *sourceImagePath;
 @property (nonatomic, readwrite, assign) KDEImageChannel sourceImageChannel;
+
++ (instancetype) imageChannelSourceForBlueprint:(KDEImageBlueprint *)blueprint;
 
 - (void) readFromDocumentDictionary:(NSDictionary *)dictionary;
 - (NSDictionary *) writeDocumentDictionary;

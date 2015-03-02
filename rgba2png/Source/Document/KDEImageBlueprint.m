@@ -34,13 +34,28 @@ NSString * const KDEImageBluePrintKeyAlphaChannel = @"AlphaChannel";
     self = [super init];
     if( self)
     {
-        self.redChannel = [KDEImageChannelSource new];
-        self.greenChannel = [KDEImageChannelSource new];
-        self.blueChannel = [KDEImageChannelSource new];
-        self.alphaChannel = [KDEImageChannelSource new];
+        self.redChannel = [KDEImageChannelSource imageChannelSourceForBlueprint:self];
+        self.greenChannel = [KDEImageChannelSource imageChannelSourceForBlueprint:self];
+        self.blueChannel = [KDEImageChannelSource imageChannelSourceForBlueprint:self];
+        self.alphaChannel = [KDEImageChannelSource imageChannelSourceForBlueprint:self];
         self.channels = @[ self.redChannel, self.greenChannel, self.blueChannel, self.alphaChannel];
     }
     return self;
+}
+
+- (NSArray *) allChannelSourceImagePaths
+{
+    NSMutableSet *paths = [NSMutableSet set];
+    
+    for( KDEImageChannelSource *channel in self.channels)
+    {
+        if( channel.sourceImagePath.length)
+        {
+            [paths addObject:channel.sourceImagePath];
+        }
+    }
+    
+    return [paths allObjects];
 }
 
 - (void) readFromDocumentDictionary:(NSDictionary *)dictionary
