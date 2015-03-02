@@ -90,6 +90,7 @@
                 </button>
             </subviews>
             <connections>
+                <outlet property="changeButton" destination="NOz-qO-pjk" id="SLz-f7-UrX"/>
                 <outlet property="channelAlias" destination="kgC-ne-kKC" id="KvW-4B-3bI"/>
                 <outlet property="clearValue" destination="ITE-NB-I3d" id="0WO-uV-QWb"/>
                 <outlet property="clearValueView" destination="TKB-0V-tvh" id="kW1-Bh-Ioh"/>

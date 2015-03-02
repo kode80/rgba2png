@@ -103,6 +103,35 @@
                   }];
 }
 
+- (IBAction) pickSourceImage:(id)sender
+{
+    if( [sender isKindOfClass:[NSMenuItem class]])
+    {
+        NSMenuItem *menuItem = sender;
+        KDEImageChannelSourceView *channelSourceView = menuItem.representedObject;
+        KDEImageChannelSource *channelSource = [self.imageChannelSourceViewToModel objectForKey:channelSourceView];
+        
+        [self presentImageOpenPanelWithInitialPath:nil
+                                 completionHandler:^(NSString *filePath){
+                                     channelSource.sourceImagePath = filePath;
+                                     [channelSourceView displayImageChannelSource:channelSource];
+                                 }];
+    }
+}
+
+- (IBAction) clearSourceImage:(id)sender
+{
+    if( [sender isKindOfClass:[NSMenuItem class]])
+    {
+        NSMenuItem *menuItem = sender;
+        KDEImageChannelSourceView *channelSourceView = menuItem.representedObject;
+        KDEImageChannelSource *channelSource = [self.imageChannelSourceViewToModel objectForKey:channelSourceView];
+        
+        channelSource.sourceImagePath = nil;
+        [channelSourceView displayImageChannelSource:channelSource];
+    }
+}
+
 #pragma mark NSTableViewDataSource
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView
@@ -192,13 +221,54 @@
 
 #pragma mark KDEImageChannelSourceViewDelegate
 
+- (void) presentMenuForImageChannelSourceView:(KDEImageChannelSourceView *)channelSourceView
+{
+    NSMenu *menu = [NSMenu new];
+    
+    NSMenuItem *item;
+    
+    item = [[NSMenuItem alloc] initWithTitle:@"Pick new image..."
+                                      action:@selector(pickSourceImage:)
+                               keyEquivalent:@""];
+    item.representedObject = channelSourceView;
+    [menu addItem:item];
+    
+    [menu addItem:[NSMenuItem separatorItem]];
+    [menu addItem:[NSMenuItem separatorItem]];
+    
+    item = [[NSMenuItem alloc] initWithTitle:@"Clear image"
+                                      action:@selector(clearSourceImage:)
+                               keyEquivalent:@""];
+    item.representedObject = channelSourceView;
+    [menu addItem:item];
+    
+    NSView *targetView = channelSourceView.changeButton;
+    NSPoint result = [targetView convertPoint:NSMakePoint(NSMinX(targetView.bounds), NSMaxY(targetView.bounds))
+                                       toView:nil];
+    NSEvent *event = [NSApplication sharedApplication].currentEvent;
+    
+    NSEvent *newEvent = [NSEvent mouseEventWithType: [event type]
+                                           location: result
+                                      modifierFlags: [event modifierFlags]
+                                          timestamp: [event timestamp]
+                                       windowNumber: [event windowNumber]
+                                            context: [event context]
+                                        eventNumber: [event eventNumber]
+                                         clickCount: [event clickCount]
+                                           pressure: [event pressure]];
+    
+    [NSMenu popUpContextMenu:menu
+                   withEvent:newEvent
+                     forView:targetView];
+}
+
 - (void) imageChannelSourceViewDidReceiveClick:(KDEImageChannelSourceView *)channelSourceView
 {
     KDEImageChannelSource *channelSource = [self.imageChannelSourceViewToModel objectForKey:channelSourceView];
     
     if( channelSource.sourceImagePath)
     {
-        
+        [self presentMenuForImageChannelSourceView:channelSourceView];
     }
     else
     {

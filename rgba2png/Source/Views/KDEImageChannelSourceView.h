@@ -16,6 +16,7 @@
 
 @interface KDEImageChannelSourceView : NSView
 
+@property (nonatomic, readwrite, weak) IBOutlet NSButton *changeButton;
 @property (nonatomic, readwrite, weak) IBOutlet NSTextField *channelAlias;
 @property (nonatomic, readwrite, weak) IBOutlet NSImageView *sourceImage;
 @property (nonatomic, readwrite, weak) IBOutlet NSMatrix *sourceChannel;
