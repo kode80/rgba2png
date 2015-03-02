@@ -57,7 +57,17 @@
 
 - (IBAction) exportSelectedImageBlueprint:(id)sender
 {
-    
+    Document *document = (Document *)self.document;
+    KDEImageBlueprint *blueprint = document.imageBlueprints[ self.tableView.selectedRow];
+    [blueprint exportPNGWithCompletionHandler:^(BOOL success){
+        NSAlert *alert = [NSAlert new];
+        alert.messageText = success ? @"Success" : @"Error";
+        alert.informativeText = success ? [NSString stringWithFormat:@"Exported %@.", blueprint.outputPath.lastPathComponent] :
+                                          @"Make sure all source images exist and have equal dimensions.";
+        [alert addButtonWithTitle:@"OK"];
+        [alert beginSheetModalForWindow:self.window
+                      completionHandler:nil];
+    }];
 }
 
 - (IBAction) pickImageBlueprintOutputPath:(id)sender

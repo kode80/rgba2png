@@ -19,6 +19,8 @@
 
 - (NSArray *) allChannelSourceImagePaths;
 
+- (void) exportPNGWithCompletionHandler:(void (^)(BOOL success))handler;
+
 - (void) readFromDocumentDictionary:(NSDictionary *)dictionary;
 - (NSDictionary *) writeDocumentDictionary;
 
