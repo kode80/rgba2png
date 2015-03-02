@@ -31,10 +31,15 @@
 
 - (IBAction) addImageBlueprint:(id)sender
 {
-    Document *document = (Document *)self.document;
-    KDEImageBlueprint *blueprint = [KDEImageBlueprint new];
-    [document addImageBlueprint:blueprint];
-    [self.tableView reloadData];
+    [self presentPNGSavePanelWithFilename:@"Untitled"
+                        completionHandler:^(NSString *filePath) {
+                            Document *document = (Document *)self.document;
+                            KDEImageBlueprint *blueprint = [KDEImageBlueprint new];
+                            blueprint.outputPath = filePath;
+                            [document addImageBlueprint:blueprint];
+                          
+                            [self.tableView reloadData];
+                      }];
 }
 
 - (IBAction) removeSelectedImageBlueprint:(id)sender
@@ -49,21 +54,32 @@
 
 - (IBAction) pickImageBlueprintOutputPath:(id)sender
 {
+    [self presentPNGSavePanelWithFilename:@"Untitled"
+                        completionHandler:^(NSString *filePath) {
+                            NSView *parent = [(NSView *)sender superview];
+                            NSInteger row = [self.tableView rowForView:parent];
+                            Document *document = (Document *)self.document;
+                            KDEImageBlueprint *blueprint = document.imageBlueprints[ row];
+                            blueprint.outputPath = filePath;
+                      
+                            [self.tableView reloadDataForRowIndexes:[NSIndexSet indexSetWithIndex:row]
+                                                      columnIndexes:[NSIndexSet indexSetWithIndex:0]];
+                        }];
+}
+
+#pragma mark - Private
+
+- (void) presentPNGSavePanelWithFilename:(NSString *)filename
+                       completionHandler:(void (^)(NSString *filePath))handler
+{
     NSSavePanel *panel = [NSSavePanel savePanel];
     panel.allowedFileTypes = @[ @"png"];
-    panel.nameFieldStringValue = @"Untitled.png";
+    panel.nameFieldStringValue = [filename stringByAppendingPathExtension:@"png"];
     [panel beginSheetModalForWindow:self.window
                   completionHandler:^(NSInteger result){
                       if (result == NSFileHandlingPanelOKButton)
                       {
-                          NSView *parent = [(NSView *)sender superview];
-                          NSInteger row = [self.tableView rowForView:parent];
-                          Document *document = (Document *)self.document;
-                          KDEImageBlueprint *blueprint = document.imageBlueprints[ row];
-                          blueprint.outputPath = panel.URL.filePathURL.path;
-                          
-                          [self.tableView reloadDataForRowIndexes:[NSIndexSet indexSetWithIndex:row]
-                                                    columnIndexes:[NSIndexSet indexSetWithIndex:0]];
+                          handler( panel.URL.filePathURL.path);
                       }
                   }];
 }
