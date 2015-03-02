@@ -11,10 +11,13 @@
 @interface KDEDocumentWindowController : NSWindowController <NSTableViewDataSource, NSTableViewDelegate>
 
 @property (nonatomic, readwrite, weak) IBOutlet NSToolbar *toolbar;
+@property (nonatomic, readwrite, weak) IBOutlet NSToolbarItem *removeToolbarItem;
+@property (nonatomic, readwrite, weak) IBOutlet NSToolbarItem *exportToolbarItem;
 @property (nonatomic, readwrite, weak) IBOutlet NSTableView *tableView;
 
 - (IBAction) addImageBlueprint:(id)sender;
 - (IBAction) removeSelectedImageBlueprint:(id)sender;
+- (IBAction) exportSelectedImageBlueprint:(id)sender;
 
 - (IBAction) pickImageBlueprintOutputPath:(id)sender;
 

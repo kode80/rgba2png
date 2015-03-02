@@ -6,6 +6,8 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="KDEDocumentWindowController">
             <connections>
+                <outlet property="exportToolbarItem" destination="SDz-OF-Me2" id="HJa-Yh-ixK"/>
+                <outlet property="removeToolbarItem" destination="OHi-B9-qwu" id="HoD-SG-OMX"/>
                 <outlet property="tableView" destination="GCn-3k-ggk" id="cY3-hH-Gc3"/>
                 <outlet property="toolbar" destination="63Z-Oe-BTO" id="3OE-ly-qxm"/>
                 <outlet property="window" destination="xOd-HO-29H" id="JIz-fz-R2o"/>
@@ -245,7 +247,11 @@
                             <action selector="removeSelectedImageBlueprint:" target="-2" id="YAO-GU-qj6"/>
                         </connections>
                     </toolbarItem>
-                    <toolbarItem implicitItemIdentifier="0D0948AF-AA89-483A-855F-BB6651813A5B" label="Export PNG" paletteLabel="Export PNG" toolTip="Export selected blueprint" tag="-1" image="NSRefreshFreestandingTemplate" id="SDz-OF-Me2"/>
+                    <toolbarItem implicitItemIdentifier="0D0948AF-AA89-483A-855F-BB6651813A5B" label="Export PNG" paletteLabel="Export PNG" toolTip="Export selected blueprint" tag="-1" image="NSRefreshFreestandingTemplate" id="SDz-OF-Me2">
+                        <connections>
+                            <action selector="exportSelectedImageBlueprint:" target="-2" id="EZw-uk-LCz"/>
+                        </connections>
+                    </toolbarItem>
                 </allowedToolbarItems>
                 <defaultToolbarItems>
                     <toolbarItem reference="Wtd-vI-nDZ"/>
@@ -253,12 +259,16 @@
                     <toolbarItem reference="SDz-OF-Me2"/>
                     <toolbarItem reference="i35-W2-9Md"/>
                 </defaultToolbarItems>
+                <connections>
+                    <outlet property="delegate" destination="-2" id="VqA-kS-p26"/>
+                </connections>
             </toolbar>
             <connections>
                 <outlet property="delegate" destination="-2" id="0bl-1N-x8E"/>
             </connections>
             <point key="canvasLocation" x="323.5" y="369.5"/>
         </window>
+        <userDefaultsController representsSharedInstance="YES" id="mkt-iH-9cm"/>
     </objects>
     <resources>
         <image name="NSActionTemplate" width="14" height="14"/>

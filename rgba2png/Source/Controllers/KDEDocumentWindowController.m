@@ -15,7 +15,7 @@
 #import "KDEImageChannelSourceMenuItem.h"
 
 
-@interface KDEDocumentWindowController () <KDEImageChannelSourceViewDelegate>
+@interface KDEDocumentWindowController () <KDEImageChannelSourceViewDelegate, NSToolbarDelegate>
 
 @property (nonatomic, readwrite, assign) NSInteger previousSelectedRow;
 @property (nonatomic, readwrite, strong) NSMapTable *imageChannelSourceViewToModel;
@@ -53,6 +53,11 @@
         [document removeImageBlueprintAtIndex:self.tableView.selectedRow];
         [self.tableView reloadData];
     }
+}
+
+- (IBAction) exportSelectedImageBlueprint:(id)sender
+{
+    
 }
 
 - (IBAction) pickImageBlueprintOutputPath:(id)sender
@@ -142,6 +147,18 @@
         channelSource.sourceImagePath = item.channelSourceImagePath;
         [item.targetChannelSourceView displayImageChannelSource:channelSource];
     }
+}
+
+#pragma mark NSToolbarDelegate
+
+- (BOOL) validateToolbarItem:(NSToolbarItem *)theItem
+{
+    if( (theItem == self.removeToolbarItem || theItem == self.exportToolbarItem) && self.tableView.selectedRow == -1)
+    {
+        return NO;
+    }
+    
+    return YES;
 }
 
 #pragma mark NSTableViewDataSource
