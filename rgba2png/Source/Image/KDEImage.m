@@ -206,10 +206,10 @@ NSString *NSStringFromKDEImagePixel( KDEImagePixel pixel)
 {
     switch( channel)
     {
-        case KDEImageChannelRed:   return 24;
-        case KDEImageChannelGreen: return 16;
-        case KDEImageChannelBlue:  return 8;
-        case KDEImageChannelAlpha: return 0;
+        case KDEImageChannelRed:   return 0;
+        case KDEImageChannelGreen: return 8;
+        case KDEImageChannelBlue:  return 16;
+        case KDEImageChannelAlpha: return 24;
     }
 }
 
@@ -217,10 +217,10 @@ NSString *NSStringFromKDEImagePixel( KDEImagePixel pixel)
 {
     switch( channel)
     {
-        case KDEImageChannelRed:   return 0xff000000;
-        case KDEImageChannelGreen: return 0x00ff0000;
-        case KDEImageChannelBlue:  return 0x0000ff00;
-        case KDEImageChannelAlpha: return 0x000000ff;
+        case KDEImageChannelRed:   return 0x000000ff;
+        case KDEImageChannelGreen: return 0x0000ff00;
+        case KDEImageChannelBlue:  return 0x00ff0000;
+        case KDEImageChannelAlpha: return 0xff000000;
     }
 }
 

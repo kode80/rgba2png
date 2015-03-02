@@ -31,18 +31,18 @@
 
 - (void) testBitShiftForChannel
 {
-    XCTAssertEqual( [KDEImage bitShiftForChannel:KDEImageChannelRed],   24, @"Red channel bit shift is incorrect.");
-    XCTAssertEqual( [KDEImage bitShiftForChannel:KDEImageChannelGreen], 16, @"Green channel bit shift is incorrect.");
-    XCTAssertEqual( [KDEImage bitShiftForChannel:KDEImageChannelBlue],   8, @"Blue channel bit shift is incorrect.");
-    XCTAssertEqual( [KDEImage bitShiftForChannel:KDEImageChannelAlpha],  0, @"Alpha channel bit shift is incorrect.");
+    XCTAssertEqual( [KDEImage bitShiftForChannel:KDEImageChannelRed],    0, @"Red channel bit shift is incorrect.");
+    XCTAssertEqual( [KDEImage bitShiftForChannel:KDEImageChannelGreen],  8, @"Green channel bit shift is incorrect.");
+    XCTAssertEqual( [KDEImage bitShiftForChannel:KDEImageChannelBlue],  16, @"Blue channel bit shift is incorrect.");
+    XCTAssertEqual( [KDEImage bitShiftForChannel:KDEImageChannelAlpha], 24, @"Alpha channel bit shift is incorrect.");
 }
 
 - (void) testBitMaskForChannel
 {
-    XCTAssertEqual( [KDEImage bitMaskForChannel:KDEImageChannelRed],   0xff000000, @"Red channel bit mask is incorrect.");
-    XCTAssertEqual( [KDEImage bitMaskForChannel:KDEImageChannelGreen], 0x00ff0000, @"Green channel bit mask is incorrect.");
-    XCTAssertEqual( [KDEImage bitMaskForChannel:KDEImageChannelBlue],  0x0000ff00, @"Blue channel bit mask is incorrect.");
-    XCTAssertEqual( [KDEImage bitMaskForChannel:KDEImageChannelAlpha], 0x000000ff, @"Alpha channel bit mask is incorrect.");
+    XCTAssertEqual( [KDEImage bitMaskForChannel:KDEImageChannelRed],   0x000000ff, @"Red channel bit mask is incorrect.");
+    XCTAssertEqual( [KDEImage bitMaskForChannel:KDEImageChannelGreen], 0x0000ff00, @"Green channel bit mask is incorrect.");
+    XCTAssertEqual( [KDEImage bitMaskForChannel:KDEImageChannelBlue],  0x00ff0000, @"Blue channel bit mask is incorrect.");
+    XCTAssertEqual( [KDEImage bitMaskForChannel:KDEImageChannelAlpha], 0xff000000, @"Alpha channel bit mask is incorrect.");
 }
 
 - (void) testInitWithContentsOfFile
@@ -107,6 +107,22 @@
                      toChannel:KDEImageChannelAlpha];
     
     XCTAssertTrue( [reconstructed isEqualToImage:original], @"Image reconstructed by copying each channel should equal original.");
+    
+    original = [[KDEImage alloc] initWithContentsOfFile:[self pathForImageNamed:@"TestImage_r58g215b255"]];
+    
+    KDEImage *testShifted = [[KDEImage alloc] initWithWidth:original.pixelWidth
+                                                     height:original.pixelHeight
+                                                      color:KDEImagePixelMake( 0, 0, 0, 0)];
+
+    [testShifted copyChannel:KDEImageChannelGreen
+                   fromImage:original
+                   toChannel:KDEImageChannelBlue];
+    
+    KDEImage *correctShifted = [[KDEImage alloc] initWithWidth:original.pixelWidth
+                                                        height:original.pixelHeight
+                                                         color:KDEImagePixelMake( 0, 0, 215, 0)];
+    
+    XCTAssertTrue( [testShifted isEqualToImage:correctShifted], @"Image green channel should match red channel of original image.");
 }
 
 - (NSString *) pathForImageNamed:(NSString *)imageName
