@@ -7,8 +7,8 @@ It is common in 3D shaders to use the various color channels of a texture to sto
 # Status/Roadmap
 ~~Image manipulation/export implementation~~  
 ~~Project file format serialization~~  
-Placeholder UI (in dev)  
-Processing  
+~~Placeholder UI (in dev)~~  
+Processing (in dev)  
 Batch processing  
 File watching  
 Polished UI  
