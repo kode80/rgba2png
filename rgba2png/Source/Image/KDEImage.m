@@ -50,6 +50,7 @@ NSString *NSStringFromKDEImagePixel( KDEImagePixel pixel)
                                                                   hasAlpha:YES
                                                                   isPlanar:NO
                                                             colorSpaceName:NSDeviceRGBColorSpace
+                                                              bitmapFormat:NSAlphaNonpremultipliedBitmapFormat
                                                                bytesPerRow:width * 4
                                                               bitsPerPixel:32];
         [self clearToColor:color];
