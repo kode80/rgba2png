@@ -29,6 +29,7 @@
 		2054E1231AA29EC500ADCD0D /* KDEDocumentWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2054E1221AA29EC500ADCD0D /* KDEDocumentWindowController.m */; };
 		20856A9A1AA36E500015A107 /* KDEImageBlueprintCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 20856A991AA36E500015A107 /* KDEImageBlueprintCellView.m */; };
 		20856A9D1AA36E630015A107 /* KDEImageBlueprintEditCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 20856A9C1AA36E630015A107 /* KDEImageBlueprintEditCellView.m */; };
+		209EB09F1AAA5A9B00B3D213 /* KDEFileWatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 209EB09E1AAA5A9B00B3D213 /* KDEFileWatcher.m */; };
 		20C2110B1AA4B88200C9572F /* KDEImageChannelSourceMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C2110A1AA4B88200C9572F /* KDEImageChannelSourceMenuItem.m */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +80,8 @@
 		20856A991AA36E500015A107 /* KDEImageBlueprintCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KDEImageBlueprintCellView.m; sourceTree = "<group>"; };
 		20856A9B1AA36E630015A107 /* KDEImageBlueprintEditCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KDEImageBlueprintEditCellView.h; sourceTree = "<group>"; };
 		20856A9C1AA36E630015A107 /* KDEImageBlueprintEditCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KDEImageBlueprintEditCellView.m; sourceTree = "<group>"; };
+		209EB09D1AAA5A9B00B3D213 /* KDEFileWatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KDEFileWatcher.h; sourceTree = "<group>"; };
+		209EB09E1AAA5A9B00B3D213 /* KDEFileWatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KDEFileWatcher.m; sourceTree = "<group>"; };
 		20C211091AA4B88200C9572F /* KDEImageChannelSourceMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KDEImageChannelSourceMenuItem.h; sourceTree = "<group>"; };
 		20C2110A1AA4B88200C9572F /* KDEImageChannelSourceMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KDEImageChannelSourceMenuItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -168,6 +171,7 @@
 		2054E0F71AA2316C00ADCD0D /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				209EB09C1AAA5A7E00B3D213 /* FileWatcher */,
 				20C211081AA4B85F00C9572F /* Menu */,
 				20856A971AA36E210015A107 /* Views */,
 				2054E1201AA29EA300ADCD0D /* Controllers */,
@@ -222,6 +226,15 @@
 				2038A0AA1AA3BC430009E6A1 /* KDEImageChannelSourceView.m */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		209EB09C1AAA5A7E00B3D213 /* FileWatcher */ = {
+			isa = PBXGroup;
+			children = (
+				209EB09D1AAA5A9B00B3D213 /* KDEFileWatcher.h */,
+				209EB09E1AAA5A9B00B3D213 /* KDEFileWatcher.m */,
+			);
+			path = FileWatcher;
 			sourceTree = "<group>";
 		};
 		20C211081AA4B85F00C9572F /* Menu */ = {
@@ -341,6 +354,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2054E1181AA280FC00ADCD0D /* KDEImage.m in Sources */,
+				209EB09F1AAA5A9B00B3D213 /* KDEFileWatcher.m in Sources */,
 				2054E1171AA280FC00ADCD0D /* Document.m in Sources */,
 				2054E0FE1AA2316C00ADCD0D /* AppDelegate.m in Sources */,
 				2032F3181AA2021B00700661 /* main.m in Sources */,
