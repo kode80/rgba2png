@@ -10,14 +10,16 @@
 
 #import "KDEImageBlueprint.h"
 #import "KDEDocumentWindowController.h"
+#import "KDEFileWatcher.h"
 
 
 NSString * const DocumentKeyImageBlueprints = @"ImageBlueprints";
 
 
-@interface Document ()
+@interface Document () <KDEFileWatcherDelegate>
 
 @property (nonatomic, readwrite, copy) NSArray *imageBlueprints;
+@property (nonatomic, readwrite, strong) KDEFileWatcher *fileWatcher;
 
 @end
 
@@ -96,6 +98,9 @@ NSString * const DocumentKeyImageBlueprints = @"ImageBlueprints";
         return NO;
     }
     
+    self.fileWatcher = [KDEFileWatcher new];
+    self.fileWatcher.delegate = self;
+    
     NSMutableArray *blueprints = [NSMutableArray array];
     KDEImageBlueprint *blueprint;
     for( NSDictionary *blueprintDictionary in doc[ DocumentKeyImageBlueprints])
@@ -103,10 +108,27 @@ NSString * const DocumentKeyImageBlueprints = @"ImageBlueprints";
         blueprint = [KDEImageBlueprint new];
         [blueprint readFromDocumentDictionary:blueprintDictionary];
         [blueprints addObject:blueprint];
+        
+        if( blueprint.redChannel.sourceImagePath) { [self.fileWatcher watchFileAtPath:blueprint.redChannel.sourceImagePath]; }
+        if( blueprint.blueChannel.sourceImagePath) { [self.fileWatcher watchFileAtPath:blueprint.greenChannel.sourceImagePath]; }
+        if( blueprint.greenChannel.sourceImagePath) { [self.fileWatcher watchFileAtPath:blueprint.blueChannel.sourceImagePath]; }
+        if( blueprint.alphaChannel.sourceImagePath) { [self.fileWatcher watchFileAtPath:blueprint.alphaChannel.sourceImagePath]; }
     }
     self.imageBlueprints = [NSArray arrayWithArray:blueprints];
     
     return YES;
+}
+
+#pragma mark KDEFileWatcherDelegate
+
+- (void) fileWatcher:(KDEFileWatcher *)watcher fileWasModifiedAtPath:(NSString *)path
+{
+    NSLog(@"fileWasModifiedAtPath: %@", path);
+}
+
+- (void) fileWatcher:(KDEFileWatcher *)watcher fileNoLongerExistsAtPath:(NSString *)path
+{
+    NSLog(@"fileNoLongerExistsAtPath: %@", path);
 }
 
 @end
