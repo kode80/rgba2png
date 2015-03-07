@@ -16,7 +16,8 @@
 @property (nonatomic, readwrite, weak) id<KDEFileWatcherDelegate> delegate;
 
 - (void) watchFileAtPath:(NSString *)path;
-- (void) stopWatchingFileAtPAth:(NSString *)path;
+- (void) stopWatchingFileAtPath:(NSString *)path;
+- (BOOL) isWatchingFileAtPath:(NSString *)path;
 
 @end
 
