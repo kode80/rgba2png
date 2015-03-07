@@ -27,6 +27,8 @@
 		2054E11C1AA283F800ADCD0D /* KDEImageBlueprint.m in Sources */ = {isa = PBXBuildFile; fileRef = 2054E11B1AA283F800ADCD0D /* KDEImageBlueprint.m */; };
 		2054E11F1AA287A200ADCD0D /* KDEImageChannelSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2054E11E1AA287A200ADCD0D /* KDEImageChannelSource.m */; };
 		2054E1231AA29EC500ADCD0D /* KDEDocumentWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2054E1221AA29EC500ADCD0D /* KDEDocumentWindowController.m */; };
+		207F17601AAB9EFA00266318 /* KDEGenerateImageBlueprintOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 207F175F1AAB9EFA00266318 /* KDEGenerateImageBlueprintOperation.m */; };
+		207F17631AAB9FD100266318 /* KDEImageBlueprintGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 207F17621AAB9FD100266318 /* KDEImageBlueprintGenerator.m */; };
 		20856A9A1AA36E500015A107 /* KDEImageBlueprintCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 20856A991AA36E500015A107 /* KDEImageBlueprintCellView.m */; };
 		20856A9D1AA36E630015A107 /* KDEImageBlueprintEditCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 20856A9C1AA36E630015A107 /* KDEImageBlueprintEditCellView.m */; };
 		209EB09F1AAA5A9B00B3D213 /* KDEFileWatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 209EB09E1AAA5A9B00B3D213 /* KDEFileWatcher.m */; };
@@ -76,6 +78,10 @@
 		2054E11E1AA287A200ADCD0D /* KDEImageChannelSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KDEImageChannelSource.m; sourceTree = "<group>"; };
 		2054E1211AA29EC500ADCD0D /* KDEDocumentWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KDEDocumentWindowController.h; sourceTree = "<group>"; };
 		2054E1221AA29EC500ADCD0D /* KDEDocumentWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KDEDocumentWindowController.m; sourceTree = "<group>"; };
+		207F175E1AAB9EFA00266318 /* KDEGenerateImageBlueprintOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KDEGenerateImageBlueprintOperation.h; sourceTree = "<group>"; };
+		207F175F1AAB9EFA00266318 /* KDEGenerateImageBlueprintOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KDEGenerateImageBlueprintOperation.m; sourceTree = "<group>"; };
+		207F17611AAB9FD100266318 /* KDEImageBlueprintGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KDEImageBlueprintGenerator.h; sourceTree = "<group>"; };
+		207F17621AAB9FD100266318 /* KDEImageBlueprintGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KDEImageBlueprintGenerator.m; sourceTree = "<group>"; };
 		20856A981AA36E500015A107 /* KDEImageBlueprintCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KDEImageBlueprintCellView.h; sourceTree = "<group>"; };
 		20856A991AA36E500015A107 /* KDEImageBlueprintCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KDEImageBlueprintCellView.m; sourceTree = "<group>"; };
 		20856A9B1AA36E630015A107 /* KDEImageBlueprintEditCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KDEImageBlueprintEditCellView.h; sourceTree = "<group>"; };
@@ -171,6 +177,7 @@
 		2054E0F71AA2316C00ADCD0D /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				207F175D1AAB9EC500266318 /* Operations */,
 				209EB09C1AAA5A7E00B3D213 /* FileWatcher */,
 				20C211081AA4B85F00C9572F /* Menu */,
 				20856A971AA36E210015A107 /* Views */,
@@ -213,6 +220,17 @@
 				2054E1221AA29EC500ADCD0D /* KDEDocumentWindowController.m */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		207F175D1AAB9EC500266318 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				207F175E1AAB9EFA00266318 /* KDEGenerateImageBlueprintOperation.h */,
+				207F175F1AAB9EFA00266318 /* KDEGenerateImageBlueprintOperation.m */,
+				207F17611AAB9FD100266318 /* KDEImageBlueprintGenerator.h */,
+				207F17621AAB9FD100266318 /* KDEImageBlueprintGenerator.m */,
+			);
+			path = Operations;
 			sourceTree = "<group>";
 		};
 		20856A971AA36E210015A107 /* Views */ = {
@@ -357,8 +375,10 @@
 				209EB09F1AAA5A9B00B3D213 /* KDEFileWatcher.m in Sources */,
 				2054E1171AA280FC00ADCD0D /* Document.m in Sources */,
 				2054E0FE1AA2316C00ADCD0D /* AppDelegate.m in Sources */,
+				207F17631AAB9FD100266318 /* KDEImageBlueprintGenerator.m in Sources */,
 				2032F3181AA2021B00700661 /* main.m in Sources */,
 				2054E1231AA29EC500ADCD0D /* KDEDocumentWindowController.m in Sources */,
+				207F17601AAB9EFA00266318 /* KDEGenerateImageBlueprintOperation.m in Sources */,
 				20856A9A1AA36E500015A107 /* KDEImageBlueprintCellView.m in Sources */,
 				2038A0AB1AA3BC430009E6A1 /* KDEImageChannelSourceView.m in Sources */,
 				20C2110B1AA4B88200C9572F /* KDEImageChannelSourceMenuItem.m in Sources */,
