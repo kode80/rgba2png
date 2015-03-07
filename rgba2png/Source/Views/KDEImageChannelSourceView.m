@@ -75,6 +75,7 @@
     if( channelSource.sourceImagePath.length)
     {
         self.sourceImage.image = [[NSImage alloc] initWithContentsOfFile:channelSource.sourceImagePath];
+        self.sourceImage.toolTip = channelSource.sourceImagePath;
         [self selectMatrixColumnForImageChannel:channelSource.sourceImageChannel];
         [self showSourceImage];
     }
